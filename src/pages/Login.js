@@ -9,15 +9,13 @@ export default class Login extends Component{
     cadnewuser(){
         Actions.cadnewuser()
     }
-    home(){
-        Actions.home()
+    loginuser(){
+      Actions.loginuser()
     }
     render() {
         const images = [
-          'https://placeimg.com/640/640/people',
-            'https://placeimg.com/640/640/people',
-            'https://placeimg.com/640/640/people',
-            'https://placeimg.com/640/640/people',
+          'http://teledocs.clientesapidigital.com.br/appSlider/slider01.jpg',
+          'http://teledocs.clientesapidigital.com.br/appSlider/slider02.jpg',
           ];
       return (
         <View style={styles.container}>
@@ -38,7 +36,7 @@ export default class Login extends Component{
         <Button bordered style={{marginRight:20,padding:10, borderColor:'#282c34'}} onPress={this.cadnewuser}>
             <Text style={{color:'#282c34', marginLeft:10, marginRight:10}}>CADASTRAR</Text>
           </Button>
-        <Button style={{padding:10, backgroundColor:'#282c34'}} onPress={this.home}><Text style={{color:'white', marginLeft:25, marginRight:25}}>LOGIN</Text></Button>
+        <Button style={{padding:10, backgroundColor:'#282c34'}} onPress={this.loginuser}><Text style={{color:'white', marginLeft:25, marginRight:25}}>LOGIN</Text></Button>
         
         </Container>
         <Text style={styles.welcome}>Ao entrar você concorda com os nossos</Text><Text style={{fontWeight:'bold', marginTop:-10, marginBottom:15, fontSize:14}}> Termos de Uso e Política de Privacidade</Text>

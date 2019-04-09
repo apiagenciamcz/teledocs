@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import CadNewUser from './pages/CadNewUser';
 import LoginUser from './pages/LoginUser';
+import AplicarCupom from './pages/AplicarCupom';
 import Faq from './pages/Faq';
 import Contatos from './pages/Contatos';
 
@@ -18,6 +19,7 @@ export default class Routes extends Component{
               <Scene key="cadnewuser" hideNavBar component={CadNewUser} title="CadNewUser"/>
               <Scene key="loginuser" hideNavBar component={LoginUser} title="LoginUser"/>
               <Scene key="home" hideNavBar component={Home} title="Home"/>
+              <Scene key="aplicarcupom" hideNavBar component={AplicarCupom} title="AplicarCupom"/>
               <Scene key="faq" hideNavBar component={Faq} title="Faq"/>
               <Scene key="contatos" hideNavBar component={Contatos} title="Contatos"/>
             </Scene>

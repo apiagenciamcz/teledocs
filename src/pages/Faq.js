@@ -60,7 +60,7 @@ export default class Faq extends Component{
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
                 <Item style={{marginBottom:20}}>
-                    <Text style={styles.title}>FAQ</Text>
+                    <Text style={styles.title}>Faq</Text>
                 </Item>
                 <Item padder>
                     <Accordion dataArray={dataArray} expanded={0} headerStyle={{ backgroundColor: "#fff" }}/>
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     title: {
         flex: 1,
         color:'#282c34',
-        fontSize:20,
+        fontSize:18,
         marginBottom:10,
     },
   });

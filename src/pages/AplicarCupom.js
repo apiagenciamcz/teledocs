@@ -65,7 +65,7 @@ export default class AplicarCupom extends Component{
               <Input />
             </Item>
           </Form>
-                <Button style={{padding:10, backgroundColor:'#282c34', width:'100%'}} onPress={this._toggleModal}><Text style={{color:'white', flex:1, textAlign:'center'}}>APLiCAR</Text></Button>
+                <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this._toggleModal}><Text style={{color:'white', flex:1, textAlign:'center'}}>APLiCAR</Text></Button>
 
 
                 <Modal isVisible={this.state.isModalVisible} style={{maxHeight:390}}>
@@ -77,7 +77,7 @@ export default class AplicarCupom extends Component{
             <Item style={{marginTop:20, marginBottom:20, borderBottomWidth:0}}>
                 <Text style={{textAlign:'center'}}>O Seu Cupom foi validado com sucesso. Aproveite os benefícios de nossa plataforma</Text>
             </Item>
-            <Button style={{padding:10, backgroundColor:'#282c34', width:'100%'}} onPress={this._toggleModal}><Text style={{color:'white', flex:1, textAlign:'center'}}>FECHAR</Text></Button>
+            <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this._toggleModal}><Text style={{color:'white', flex:1, textAlign:'center'}}>FECHAR</Text></Button>
           </View>
         </Modal>
 

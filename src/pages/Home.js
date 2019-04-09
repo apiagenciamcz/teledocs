@@ -49,7 +49,7 @@ export default class Home extends Component{
                       <Text style={{fontWeight:'bold', color:'#b9001f'}}>R$ 50,00</Text>
                   </CardItem>
                   <CardItem>
-                  <Button style={{padding:10, backgroundColor:'#282c34', width:'100%'}} onPress={this.loginuser}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
+                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.loginuser}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
                   </CardItem>
               </Card>
 
@@ -67,7 +67,7 @@ export default class Home extends Component{
                       <Text style={{fontWeight:'bold', color:'#b9001f'}}>R$ 100,00</Text>
                   </CardItem>
                   <CardItem>
-                  <Button style={{padding:10, backgroundColor:'#282c34', width:'100%'}} onPress={this.loginuser}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
+                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.loginuser}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
                   </CardItem>
               </Card>
 
@@ -85,7 +85,7 @@ export default class Home extends Component{
                       <Text style={{fontWeight:'bold', color:'#b9001f'}}>R$ 150,00</Text>
                   </CardItem>
                   <CardItem>
-                  <Button style={{padding:10, backgroundColor:'#282c34', width:'100%'}} onPress={this.loginuser}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
+                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.loginuser}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
                   </CardItem>
               </Card>
 

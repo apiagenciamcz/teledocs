@@ -41,7 +41,7 @@ export default class LoginUser extends Component{
                             <Input secureTextEntry={true} maxLength={6} style={styles.inputs}/>
                             </Item>
                             <Button block style={{backgroundColor:'#282c34', marginTop:40, marginBottom:20}} onPress={this.home}><Text> ENTRAR </Text></Button>
-                            <Text style={{fontSize:14, textAlign:'center'}}>Ainda não tem conta?<Text style={{fontWeight:'bold', fontSize:14}} onPress={this.cadnewuser}> Cadastre-se</Text> </Text>
+                            <Text style={{fontSize:14, textAlign:'center'}}>Ainda não tem conta?<Text style={{fontWeight:'500', fontSize:14}} onPress={this.cadnewuser}> Cadastre-se</Text> </Text>
                             <Text style={{marginTop:20}}>&copy; 2019</Text>
                         </Form>
                     </Content>

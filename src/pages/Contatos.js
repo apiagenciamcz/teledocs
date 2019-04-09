@@ -58,7 +58,7 @@ export default class Contatos extends Component{
                 </Item>
                 <Form>
                     <Textarea rowSpan={5} bordered placeholder="Digite sua mensagem" style={{backgroundColor:'#fff'}}/>
-                    <Button style={{padding:10, backgroundColor:'#282c34', width:'100%', marginTop:20}} onPress={this._toggleModal}>
+                    <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:20}} onPress={this._toggleModal}>
                         <Text style={{color:'white', flex:1, textAlign:'center'}}>ENVIAR</Text>
                     </Button>
                 </Form>
@@ -71,7 +71,7 @@ export default class Contatos extends Component{
             <Item style={{marginTop:20, marginBottom:20, borderBottomWidth:0}}>
                 <Text>O seu contato foi enviado com sucesso. Em breve, nossa equipe entrará em contato.</Text>
             </Item>
-            <Button style={{padding:10, backgroundColor:'#282c34', width:'100%'}} onPress={this._toggleModal}><Text style={{color:'white', flex:1, textAlign:'center'}}>FECHAR</Text></Button>
+            <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this._toggleModal}><Text style={{color:'white', flex:1, textAlign:'center'}}>FECHAR</Text></Button>
           </View>
         </Modal>
 

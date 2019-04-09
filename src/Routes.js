@@ -11,6 +11,7 @@ import AplicarCupom from './pages/AplicarCupom';
 import Faq from './pages/Faq';
 import Contatos from './pages/Contatos';
 
+
 export default class Routes extends Component{
     render(){
         return(

@@ -13,6 +13,10 @@ export default class SideBar extends Component{
     home(){
         Actions.home()
     }
+    faq(){
+        Actions.faq()
+    }
+    re
     contatos(){
         Actions.contatos()
     }
@@ -30,7 +34,7 @@ export default class SideBar extends Component{
                         <ListItem noBorder><Text style={styles.listItem}>SUAS CONSULTAS</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem}>MEIOS DE PAGAMENTO</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem}>MEUS CUPONS</Text></ListItem>
-                        <ListItem noBorder><Text style={styles.listItem}>FAQ</Text></ListItem>
+                        <ListItem noBorder><Text style={styles.listItem} onPress={this.faq}>FAQ</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem}>PROFILE</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem} onPress={this.contatos}>CONTATE-NOS</Text></ListItem>
                     </List>

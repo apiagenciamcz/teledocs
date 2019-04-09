@@ -4,8 +4,6 @@ import { Content, Text, Thumbnail, ListItem, List, Item, Header} from 'native-ba
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Perfil from '../images/perfil_user.jpg';
-
 export default class SideBar extends Component{
     render(){
 

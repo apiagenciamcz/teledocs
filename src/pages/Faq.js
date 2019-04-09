@@ -74,10 +74,11 @@ export default class Faq extends Component{
 }
 
 const styles = StyleSheet.create({
-    title: {
-        flex: 1,
-        color:'#282c34',
-        fontSize:18,
-        marginBottom:10,
-    },
+  title: {
+    flex: 1,
+    color:'#282c34',
+    fontSize:18,
+    fontWeight:'500',
+    marginBottom:10,
+},
   });

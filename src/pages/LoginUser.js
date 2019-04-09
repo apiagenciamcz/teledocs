@@ -32,7 +32,7 @@ export default class LoginUser extends Component{
                         <Text style={styles.subtitle}>Ou use seu email.</Text>
                         <Form>
                             <Item floatingLabel>
-                            <Label style={styles.label}>Digite o seu nome</Label>
+                            <Label style={styles.label}>Digite o seu email</Label>
                             <Input style={styles.inputs}/>
                             </Item>
 
@@ -42,6 +42,7 @@ export default class LoginUser extends Component{
                             </Item>
                             <Button block style={{backgroundColor:'#282c34', marginTop:40, marginBottom:20}} onPress={this.home}><Text> ENTRAR </Text></Button>
                             <Text style={{fontSize:14, textAlign:'center'}}>Ainda não tem conta?<Text style={{fontWeight:'bold', fontSize:14}} onPress={this.cadnewuser}> Cadastre-se</Text> </Text>
+                            <Text style={{marginTop:20}}>&copy; 2019</Text>
                         </Form>
                     </Content>
                 </Container>
@@ -75,8 +76,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         textAlign: 'center',
         marginTop:20,
-        marginBottom:-20,
-    },
+     },
     label:{
         fontSize: 16,
         color:'#999',

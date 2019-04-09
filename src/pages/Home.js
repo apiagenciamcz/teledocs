@@ -22,7 +22,7 @@ export default class Home extends Component{
                   <Icon name='menu' />
                 </Button>
               </Left>
-              <Body>
+              <Body style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginRight:50}}>
                 <Title>TeleDocs</Title>
               </Body>
             </Header>

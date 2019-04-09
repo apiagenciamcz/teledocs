@@ -8,6 +8,7 @@ import CadNewUser from './pages/CadNewUser';
 import LoginUser from './pages/LoginUser';
 import MeiosdePagt from './pages/MeiosdePagt';
 import AplicarCupom from './pages/AplicarCupom';
+import Profile from './pages/Profile';
 import Faq from './pages/Faq';
 import Contatos from './pages/Contatos';
 
@@ -22,6 +23,7 @@ export default class Routes extends Component{
               <Scene key="loginuser" hideNavBar component={LoginUser} title="LoginUser"/>
               <Scene key="home" hideNavBar component={Home} title="Home"/>
               <Scene key="meiosdepagt" hideNavBar component={MeiosdePagt} title="MeiosdePagt"/>
+              <Scene key="profile" hideNavBar component={Profile} title="profile"/>
               <Scene key="aplicarcupom" hideNavBar component={AplicarCupom} title="AplicarCupom"/>
               <Scene key="faq" hideNavBar component={Faq} title="Faq"/>
               <Scene key="contatos" hideNavBar component={Contatos} title="Contatos"/>

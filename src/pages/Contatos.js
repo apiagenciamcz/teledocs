@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, TouchableOpacity, View} from 'react-native';
+import { ScrollView, StyleSheet, View} from 'react-native';
 import { Header, Left, Body, Text, Form, Title, Drawer, Textarea, Button, Right, Item} from 'native-base';
 
 import Voltar from 'react-native-vector-icons/FontAwesome';
@@ -53,7 +53,9 @@ export default class Contatos extends Component{
               </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
-
+                <Item style={{marginBottom:20}}>
+                    <Text style={styles.title}>CONTATOS</Text>
+                </Item>
                 <Form>
                     <Textarea rowSpan={5} bordered placeholder="Digite sua mensagem" style={{backgroundColor:'#fff'}}/>
                     <Button style={{padding:10, backgroundColor:'#282c34', width:'100%', marginTop:20}} onPress={this._toggleModal}>
@@ -78,3 +80,12 @@ export default class Contatos extends Component{
         )
     }
 }
+
+const styles = StyleSheet.create({
+    title: {
+        flex: 1,
+        color:'#282c34',
+        fontSize:20,
+        marginBottom:10,
+    },
+  });

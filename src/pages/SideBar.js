@@ -4,7 +4,18 @@ import { Content, Text, Thumbnail, ListItem, List, Item, Header} from 'native-ba
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import {Actions} from 'react-native-router-flux';
+
 export default class SideBar extends Component{
+    login(){
+        Actions.login()
+    }
+    home(){
+        Actions.home()
+    }
+    contatos(){
+        Actions.contatos()
+    }
     render(){
 
         return(
@@ -14,17 +25,18 @@ export default class SideBar extends Component{
                 </Item>
                 <Content style={{paddingRight:20}}>
                     
-                    <List style={{padding:10}}>
+                    <List>
+                        <ListItem noBorder><Text style={styles.listItem} onPress={this.home}>HOME</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem}>SUAS CONSULTAS</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem}>MEIOS DE PAGAMENTO</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem}>MEUS CUPONS</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem}>FAQ</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem}>PROFILE</Text></ListItem>
-                        <ListItem noBorder><Text style={styles.listItem}>CONTATE-NOS</Text></ListItem>
+                        <ListItem noBorder><Text style={styles.listItem} onPress={this.contatos}>CONTATE-NOS</Text></ListItem>
                     </List>
                     
                 </Content>
-                <Item style={{borderBottomWidth:0, alignSelf:'baseline', padding:30}}>
+                <Item style={{borderBottomWidth:0, alignSelf:'baseline', padding:30}} onPress={this.login}>
                     <Icon name="sign-out" size={30} color="#fff" /><Text style={{color:'#fff', fontSize:14, marginLeft:20}}>SAIR</Text>
                 </Item>
             </LinearGradient>
@@ -42,6 +54,7 @@ var styles = StyleSheet.create({
     listItem:{
         color:'#fff',
         fontSize:14,
+        marginBottom:-10,
         
     }
   });

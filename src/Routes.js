@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import CadNewUser from './pages/CadNewUser';
 import LoginUser from './pages/LoginUser';
+import Contatos from './pages/Contatos';
 
 export default class Routes extends Component{
     render(){
@@ -13,9 +14,10 @@ export default class Routes extends Component{
             <Router>
             <Scene key="root">
               <Scene key="login" hideNavBar component={Login} title="Login" initial={true}/>
-              <Scene key="home" hideNavBar component={Home} title="Home"/>
               <Scene key="cadnewuser" hideNavBar component={CadNewUser} title="CadNewUser"/>
               <Scene key="loginuser" hideNavBar component={LoginUser} title="LoginUser"/>
+              <Scene key="home" hideNavBar component={Home} title="Home"/>
+              <Scene key="contatos" hideNavBar component={Contatos} title="Contatos"/>
             </Scene>
            </Router>
 

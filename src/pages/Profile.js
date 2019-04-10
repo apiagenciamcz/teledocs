@@ -52,8 +52,8 @@ export default class MeiosdePagt extends Component{
                             <Voltar name='arrow-left' size={20} style={{color:'#282c34'}}></Voltar>
                     </Button>
                 </Left>
-                <Body style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginLeft:50}}>
-                  <Title style={{color:'#282c34'}}>TeleDocs</Title>
+                <Body style={{flex: 1}}>
+                  <Title style={{color:'#282c34'}}>Profile</Title>
                 </Body>
                 <Right>
                     <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} />
@@ -61,9 +61,6 @@ export default class MeiosdePagt extends Component{
               </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
-                <Item style={{marginBottom:20}}>
-                    <Text style={styles.title}>Profile</Text>
-                </Item>
                 <Item>
                     <Input placeholder="Israel Moreira dos Santos" style={{color:'#282c34', fontSize:16}} placeholderTextColor="#999"/>
                 </Item>

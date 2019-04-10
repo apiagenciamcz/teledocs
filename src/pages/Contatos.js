@@ -44,8 +44,8 @@ export default class Contatos extends Component{
                             <Voltar name='arrow-left' size={20} style={{color:'#282c34'}}></Voltar>
                     </Button>
                 </Left>
-                <Body style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginLeft:50}}>
-                  <Title style={{color:'#282c34'}}>TeleDocs</Title>
+                <Body style={{flex: 1}}>
+                  <Title style={{color:'#282c34'}}>Contate-nos</Title>
                 </Body>
                 <Right>
                     <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} />
@@ -53,9 +53,6 @@ export default class Contatos extends Component{
               </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
-                <Item style={{marginBottom:20}}>
-                    <Text style={styles.title}>Contate-nos</Text>
-                </Item>
                 <Form>
                     <Textarea rowSpan={5} bordered placeholder="Digite sua mensagem" style={{backgroundColor:'#fff'}}/>
                     <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:20}} onPress={this._toggleModal}>

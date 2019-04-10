@@ -4,6 +4,7 @@ import {Router, Scene} from 'react-native-router-flux';
 
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Consultas from './pages/Consultas';
 import CadNewUser from './pages/CadNewUser';
 import LoginUser from './pages/LoginUser';
 import MeiosdePagt from './pages/MeiosdePagt';
@@ -22,6 +23,7 @@ export default class Routes extends Component{
               <Scene key="cadnewuser" hideNavBar component={CadNewUser} title="CadNewUser"/>
               <Scene key="loginuser" hideNavBar component={LoginUser} title="LoginUser"/>
               <Scene key="home" hideNavBar component={Home} title="Home"/>
+              <Scene key="consultas" hideNavBar component={Consultas} title="Consultas"/>
               <Scene key="meiosdepagt" hideNavBar component={MeiosdePagt} title="MeiosdePagt"/>
               <Scene key="profile" hideNavBar component={Profile} title="profile"/>
               <Scene key="aplicarcupom" hideNavBar component={AplicarCupom} title="AplicarCupom"/>

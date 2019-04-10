@@ -44,8 +44,8 @@ export default class AplicarCupom extends Component{
                             <Voltar name='arrow-left' size={20} style={{color:'#282c34'}}></Voltar>
                     </Button>
                 </Left>
-                <Body style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginLeft:50}}>
-                  <Title style={{color:'#282c34'}}>TeleDocs</Title>
+                <Body style={{flex: 1}}>
+                  <Title style={{color:'#282c34'}}>Aplicar Cupom</Title>
                 </Body>
                 <Right>
                     <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} />
@@ -53,9 +53,6 @@ export default class AplicarCupom extends Component{
               </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
-                <Item style={{marginBottom:20}}>
-                    <Text style={styles.title}>Aplicar Cupom</Text>
-                </Item>
                 <Item style={{borderBottomWidth:0, marginBottom:20}}>
                     <Text>Observe que o seu cupom não pode ser utilizado em caso de consulta subsídiada pelo seu plano de saúde ou empregador.</Text>
                 </Item>

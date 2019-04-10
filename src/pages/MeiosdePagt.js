@@ -53,8 +53,8 @@ export default class MeiosdePagt extends Component{
                             <Voltar name='arrow-left' size={20} style={{color:'#282c34'}}></Voltar>
                     </Button>
                 </Left>
-                <Body style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginLeft:50}}>
-                  <Title style={{color:'#282c34'}}>TeleDocs</Title>
+                <Body style={{flex: 1}}>
+                  <Title style={{color:'#282c34', marginRight:-40}}>Meios de Pagamento</Title>
                 </Body>
                 <Right>
                     <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} />
@@ -62,9 +62,6 @@ export default class MeiosdePagt extends Component{
               </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
-                <Item style={{marginBottom:20}}>
-                    <Text style={styles.title}>Meios de Pagamento</Text>
-                </Item>
                 <Card>
             <CardItem header>
               <Text>DADOS DO CARTÃO</Text>
@@ -110,7 +107,7 @@ export default class MeiosdePagt extends Component{
                   <TextInputMask
                   type={'custom'}
                   options={{
-                    mask: '99/99/9999'
+                    mask: '99/99'
                   }}
                   value={this.state.nascimento}
                   onChangeText={text => {
@@ -119,7 +116,7 @@ export default class MeiosdePagt extends Component{
                     })
                   }}
                   style={styles.inputMask}
-                  placeholder="Digite a data de validade" type="datetime"
+                  placeholder="Digite a data de validade" type="datetime" maxLength={5}
                 />
             </Item>
 

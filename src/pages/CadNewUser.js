@@ -58,7 +58,24 @@ export default class CadNewUser extends Component{
 </Picker>
 
                             </Item>
-                            <DataPicker/>
+                            
+                            <Item style={{borderBottomWidth:1, flex:1}}>
+                  <TextInputMask
+                  type={'custom'}
+                  options={{
+                    mask: '99/99/9999'
+                  }}
+                  value={this.state.nascimento}
+                  onChangeText={text => {
+                    this.setState({
+                      nascimento: text
+                    })
+                  }}
+                  style={{flex:1, flexDirection:'row', fontSize:16, color:'#282c34'}}
+                  placeholder="Digite a data de validade" type="datetime" maxLength={10}
+
+                />
+            </Item>
 
                             <Item>
                             <TextInputMask
@@ -115,5 +132,6 @@ const styles = StyleSheet.create({
         fontSize:16, 
         color:'#282c34',
     },
+    
 
   });

@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, ScrollView} from 'react-native';
 import { Container, Picker, Button, Text, Content, Form, Item, Input} from 'native-base';
 import Face from 'react-native-vector-icons/FontAwesome';
 import {Actions} from 'react-native-router-flux';
 import { TextInputMask } from 'react-native-masked-text';
-
-import DataPicker from '../components/Data'; 
-
-
 
 
 export default class CadNewUser extends Component{
@@ -24,8 +20,8 @@ export default class CadNewUser extends Component{
     }
     render(){
         return(
-                <Container style={{padding:20}}>
-                    
+
+                    <ScrollView style={{backgroundColor:"#fff", padding:20}}>
                     <Content>
                     
                         <Text style={styles.title}>Criar Nova Conta</Text>
@@ -102,7 +98,8 @@ export default class CadNewUser extends Component{
                             <Button block style={{backgroundColor:'#282c34', marginTop:20, marginBottom:20}} onPress={this.home}><Text> Cadastrar </Text></Button>
                         </Form>
                     </Content>
-                </Container>
+                    </ScrollView>
+
 
             
         )

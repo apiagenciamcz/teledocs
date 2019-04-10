@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, Image} from 'react-native';
+import {StyleSheet, Image, ScrollView} from 'react-native';
 import { Container, Button, Text, Content, Form, Item, Input, Label} from 'native-base';
 import Face from 'react-native-vector-icons/FontAwesome';
 import {Actions} from 'react-native-router-flux';
@@ -15,8 +15,7 @@ export default class LoginUser extends Component{
     }
     render(){
         return(
-                
-                <Container style={styles.container}>
+                <ScrollView style={{backgroundColor:"#fff", padding:20}}>
                     
                     <Content>
                         <Item style={{flex: 1, justifyContent: 'center', alignItems: 'center',}}>
@@ -45,7 +44,7 @@ export default class LoginUser extends Component{
                             <Text style={{marginTop:20}}>&copy; 2019</Text>
                         </Form>
                     </Content>
-                </Container>
+                </ScrollView>
 
             
         )

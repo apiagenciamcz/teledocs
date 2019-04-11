@@ -15,6 +15,8 @@ import Contatos from './pages/Contatos';
 
 
 import Visita01 from './pages/Visitas/Visita01';
+import Visita02 from './pages/Visitas/Visita02';
+import Visita03 from './pages/Visitas/Visita03';
 
 
 export default class Routes extends Component{
@@ -34,6 +36,8 @@ export default class Routes extends Component{
               <Scene key="contatos" hideNavBar component={Contatos} title="Contatos"/>
 
               <Scene key="visita01" hideNavBar component={Visita01} title="Visita01"/>
+              <Scene key="visita02" hideNavBar component={Visita02} title="Visita02"/>
+              <Scene key="visita03" hideNavBar component={Visita03} title="Visita03"/>
             </Scene>
            </Router>
 

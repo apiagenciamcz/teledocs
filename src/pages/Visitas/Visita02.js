@@ -1,27 +1,36 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet} from 'react-native';
-import { Card, Content, Left, Body, Text, CardItem, Button, Thumbnail, Item, Footer, Right, View, Input, Picker} from 'native-base';
+import { Form, Content, Left, Body, Text, Button, Thumbnail, Item, Footer, Right, View, Input, Picker} from 'native-base';
 
 import Voltar from 'react-native-vector-icons/EvilIcons';
 import IcoHome from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Actions} from 'react-native-router-flux';
 import Modal from "react-native-modal";
 import { TextInputMask } from 'react-native-masked-text';
+import Textarea from 'react-native-textarea';
 
 
-export default class Visita01 extends Component{
+export default class Visita02 extends Component{
 
     home(){
         Actions.home()
     };
 
-    visita02(){
-        Actions.visita02()
+    visita01(){
+        Actions.visita01()
+    };
+
+    visita03(){
+        Actions.visita03()
     };
 
     state = {
         isModalVisible: false,
+        text: '',
       };
+      onChange = (value) => {
+        this.setState({ text: value });
+      }
     
       _toggleModal = () =>
         this.setState({ isModalVisible: !this.state.isModalVisible });
@@ -30,47 +39,37 @@ export default class Visita01 extends Component{
         return(
             <ScrollView style={{backgroundColor:'#eaebed'}}>
             <Item style={{borderBottomWidth:0, marginLeft:10, marginTop:10}}>
-            <Button transparent onPress={this.home}><Voltar name='arrow-left' size={50} style={{color:'#282c34'}}></Voltar></Button>
+            <Button transparent onPress={this.visita01}><Voltar name='arrow-left' size={50} style={{color:'#282c34'}}></Voltar></Button>
             </Item>
 
 
             
-            <Content style={{padding:20, borderColor:'pink'}}>
+            <Content style={{padding:20}}>
                 <Item style={{borderBottomWidth:0}}>
-                    <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:20}}>Para quem você deseja essa consulta?</Text>
+                    <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:20}}>Qual a razão dessa consulta?</Text>
                 </Item>
-                <Card style={{flex: 0, marginBottom:10}}>
-                <CardItem >
-                <Left>
-                    <Thumbnail style={{backgroundColor:'#007bff'}} />
-                    <Body>
-                    <Text onPress={this.visita02}>Israel Moreira</Text>
-                    </Body>
-                </Left>
-                </CardItem>
-                </Card>
 
 
-                <Card style={{flex: 0, marginBottom:10}}>
-                <CardItem >
-                <Left>
-                    <Thumbnail style={{backgroundColor:'#e83e8c'}}  />
-                    <Body>
-                    <Text>Meu Filho</Text>
-                    <Text note onPress={this._toggleModal}>Obrigatório ser menor de 18 anos.</Text>
-                    </Body>
-                </Left>
-                </CardItem>
-                </Card>
+                <Form>
+                <View style={styles.container}>
+        <Textarea
+          containerStyle={{backgroundColor:'#fff'}}
+          style={{padding:10, fontSize:16}}
+          onChangeText={this.onChange}
+          defaultValue={this.state.text}
+          maxLength={280}
+          placeholder={'Descreva aqui os motivos de sua consulta'}
+          placeholderTextColor={'#c7c7c7'}
+          underlineColorAndroid={'transparent'}
+        />
+      </View>
+                  
+                    <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:20}} onPress={this.visita03}>
+                        <Text style={{color:'white', flex:1, textAlign:'center'}}>AVANÇAR</Text>
+                    </Button>
+                </Form>
 
-                    <Card style={{flex: 0}}>
-                    <CardItem >
-                        <Body >
-                        <Text >Para outra pessoa?</Text>
-                        <Text note >Se o paciente tiver mais de 18 anos, mesmo que seja dependente do seu plano de saúde, ele precisará <Text style={{fontWeight:'bold', color:'#282c34'}}>criar sua própria conta.</Text></Text>
-                        </Body>
-                    </CardItem>
-                    </Card>
+
                 <Modal isVisible={this.state.isModalVisible} style={{maxHeight:400}}>
           <View style={{ flex: 1, backgroundColor:'#fff', padding:20 }} size={100}>
             <Item style={{borderBottomWidth:0}}>
@@ -114,7 +113,10 @@ export default class Visita01 extends Component{
             <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this._toggleModal}><Text style={{color:'white', flex:1, textAlign:'center'}}>SALVAR</Text></Button>
           </View>
         </Modal>
+
+        
             </Content>
+
             <Footer style={{backgroundColor:'#eaebed'}}>
                     <Left></Left>
                     <Body></Body>
@@ -135,4 +137,5 @@ const styles = StyleSheet.create({
     fontWeight:'500',
     marginBottom:10,
 },
+
   });

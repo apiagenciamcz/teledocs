@@ -42,7 +42,7 @@ export default class Home extends Component{
                 </Right>
               </Header>
             
-              <View style={{backgroundColor:'#eaebed', padding:20, marginTop:-15}}>
+              <View style={{backgroundColor:'#eaebed', padding:20}}>
             
               <Card style={{marginBottom:5}}>
               <CardItem>
@@ -57,10 +57,10 @@ export default class Home extends Component{
              <Item style={{width:'90%', marginLeft:15}}></Item>
              <CardItem>
                  <Body>
-                 <Text note style={{fontWeight:'bold', marginTop:5}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 50,00</Text></Text>
+                 <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 50,00</Text></Text>
                  </Body>
                  <Right>
-                 <Avancar name='arrow-right' size={50} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
+                 <Avancar name='arrow-right' size={40} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
                  </Right>
              </CardItem>
               </Card>
@@ -78,10 +78,10 @@ export default class Home extends Component{
              <Item style={{width:'90%', marginLeft:15}}></Item>
              <CardItem>
                  <Body>
-                 <Text note style={{fontWeight:'bold', marginTop:5}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 100,00</Text></Text>
+                 <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 100,00</Text></Text>
                  </Body>
                  <Right>
-                 <Avancar name='arrow-right' size={50} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
+                 <Avancar name='arrow-right' size={40} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
                  </Right>
              </CardItem>
               </Card>
@@ -99,10 +99,10 @@ export default class Home extends Component{
              <Item style={{width:'90%', marginLeft:15}}></Item>
              <CardItem>
                  <Body>
-                 <Text note style={{fontWeight:'bold', marginTop:5}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 150,00</Text></Text>
+                 <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 150,00</Text></Text>
                  </Body>
                  <Right>
-                 <Avancar name='arrow-right' size={50} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
+                 <Avancar name='arrow-right' size={40} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
                  </Right>
              </CardItem>
               </Card>

@@ -11,7 +11,13 @@ import MenuHeader from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import SideBar from './SideBar';
 
+
 export default class Home extends Component{
+    visita01(){
+        Actions.visita01()
+    }
+
+
     closeDrawer() {
         this._drawer._root.close()
       };
@@ -23,13 +29,17 @@ export default class Home extends Component{
             <Drawer ref={(ref) => { this._drawer = ref; }} 
             content={<SideBar navigator={this._navigator} />} 
             onClose={() => this.closeDrawer()} >
-            <Header style={{backgroundColor:'#fff', shadowColor:'blue', shadowOpacity:2}}>
-                <Left>
-                <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} />
+            <Header style={{backgroundColor:'#eaebed', shadowColor:'blue', shadowOpacity:2, height:80}}>
+                <Left style={{marginLeft:10}}>
+                <Image style={{width: 60, height: 60}} source={require('../images/LogoB.jpg')} />
                 </Left>
-                <Body style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginRight:50}}>
-                  <Title style={{color:'#282c34'}}>TeleDocs</Title>
+                <Body style={{flex: 1, justifyContent: 'center', marginLeft:20}}>
+                <Text style={{fontWeight:'bold', color:'#282c34'}}>Olá, Israel</Text>
+                    <Text note style={{color:'#282c34'}}>Seja Bem-Vindo</Text>
                 </Body>
+                <Right>
+                <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} /> 
+                </Right>
               </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
@@ -49,7 +59,7 @@ export default class Home extends Component{
                       <Text style={{fontWeight:'bold', color:'#b9001f'}}>R$ 50,00</Text>
                   </CardItem>
                   <CardItem>
-                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.loginuser}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
+                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.visita01}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
                   </CardItem>
               </Card>
 
@@ -67,7 +77,7 @@ export default class Home extends Component{
                       <Text style={{fontWeight:'bold', color:'#b9001f'}}>R$ 100,00</Text>
                   </CardItem>
                   <CardItem>
-                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.loginuser}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
+                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.visita01}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
                   </CardItem>
               </Card>
 
@@ -85,7 +95,7 @@ export default class Home extends Component{
                       <Text style={{fontWeight:'bold', color:'#b9001f'}}>R$ 150,00</Text>
                   </CardItem>
                   <CardItem>
-                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.loginuser}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
+                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.visita01}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
                   </CardItem>
               </Card>
 

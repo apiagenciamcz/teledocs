@@ -14,6 +14,9 @@ import Faq from './pages/Faq';
 import Contatos from './pages/Contatos';
 
 
+import Visita01 from './pages/Visitas/Visita01';
+
+
 export default class Routes extends Component{
     render(){
         return(
@@ -29,6 +32,8 @@ export default class Routes extends Component{
               <Scene key="aplicarcupom" hideNavBar component={AplicarCupom} title="AplicarCupom"/>
               <Scene key="faq" hideNavBar component={Faq} title="Faq"/>
               <Scene key="contatos" hideNavBar component={Contatos} title="Contatos"/>
+
+              <Scene key="visita01" hideNavBar component={Visita01} title="Visita01"/>
             </Scene>
            </Router>
 

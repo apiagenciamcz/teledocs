@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, Image} from 'react-native';
-import { Content, Text, Thumbnail, ListItem, List, Item, Header} from 'native-base';
+import { Content, Text, Thumbnail, ListItem, List, Item, Left, Body} from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -35,8 +35,14 @@ export default class SideBar extends Component{
 
         return(
             <LinearGradient colors={['#242831', '#424855']} style={styles.linearGradient}>
-                <Item style={{borderBottomWidth:0, justifyContent: 'center'}}>
-                    <Image style={{width: 80, height: 80, marginBottom:40, marginTop:40}} source={require('../images/LogoW.png')} />
+                <Item style={{borderBottomWidth:0, padding:20, marginTop:20, marginBottom:40}}>
+                    <Left>
+                    <Thumbnail style={{width: 60, height: 60}} source={require('../images/perfil_user.jpeg')} />
+                    </Left>
+                    <Body style={{flex: 1, alignItems:'flex-start', marginLeft:-50}}>
+                    <Text style={{fontWeight:'bold', color:'#fff'}}>Israel Moreira</Text>
+                        <Text note style={{color:'#fff'}} onPress={this.profile}>Editar Perfil</Text>
+                    </Body>
                 </Item>
                 <Content style={{paddingRight:20}}>
                     
@@ -46,7 +52,6 @@ export default class SideBar extends Component{
                         <ListItem noBorder><Text style={styles.listItem} onPress={this.meiosdepagt}>MEIOS DE PAGAMENTO</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem} onPress={this.aplicarcupom}>APLICAR CUPOM</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem} onPress={this.faq}>FAQ</Text></ListItem>
-                        <ListItem noBorder><Text style={styles.listItem} onPress={this.profile}>PROFILE</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem} onPress={this.contatos}>CONTATE-NOS</Text></ListItem>
                     </List>
                     

@@ -38,17 +38,16 @@ export default class AplicarCupom extends Component{
             <Drawer ref={(ref) => { this._drawer = ref; }} 
             content={<SideBar navigator={this._navigator} />} 
             onClose={() => this.closeDrawer()} >
-            <Header style={{backgroundColor:'#fff', shadowColor:'blue', shadowOpacity:2}}>
-                <Left>
-                    <Button transparent onPress={() => this.back()}>
-                            <Voltar name='arrow-left' size={20} style={{color:'#282c34'}}></Voltar>
-                    </Button>
+            <Header style={{backgroundColor:'#eaebed', shadowColor:'blue', shadowOpacity:2, height:80}}>
+                <Left style={{marginLeft:10}}>
+                <Image style={{width: 60, height: 60}} source={require('../images/LogoB.jpg')} />
                 </Left>
-                <Body style={{flex: 1}}>
-                  <Title style={{color:'#282c34'}}>Aplicar Cupom</Title>
+                <Body style={{flex: 1, justifyContent: 'center', marginLeft:20}}>
+                <Text style={{fontWeight:'bold', color:'#282c34'}}>TeleDocs</Text>
+                    <Text note style={{color:'#282c34'}}>Aplicar Cupom</Text>
                 </Body>
                 <Right>
-                    <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} />
+                <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} /> 
                 </Right>
               </Header>
             

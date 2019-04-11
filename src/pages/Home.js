@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, ScrollView} from 'react-native';
-import { Header, Left, Body, Text, Card, CardItem, Thumbnail, Item, Drawer, Right, Button, Icon } from 'native-base';
+import { Header, Left, Body, Text, Card, CardItem, Thumbnail, Item, Drawer, Right, Button, Icon, View } from 'native-base';
 
 
 
@@ -42,9 +42,9 @@ export default class Home extends Component{
                 </Right>
               </Header>
             
-              <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
+              <View style={{backgroundColor:'#eaebed', padding:20, marginTop:-15}}>
             
-              <Card style={{marginBottom:10}}>
+              <Card style={{marginBottom:5}}>
               <CardItem>
               <Left>
                 <Thumbnail source={require('../images/generalista.jpg')}/>
@@ -57,16 +57,15 @@ export default class Home extends Component{
              <Item style={{width:'90%', marginLeft:15}}></Item>
              <CardItem>
                  <Body>
-                 <Text note>10/04/2019 | 11:11</Text>
-                 <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 50,00</Text></Text>
+                 <Text note style={{fontWeight:'bold', marginTop:5}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 50,00</Text></Text>
                  </Body>
                  <Right>
-                 <Avancar name='arrow-right' size={50} style={{color:'#282c34'}} onPress={this.visita01}></Avancar>
+                 <Avancar name='arrow-right' size={50} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
                  </Right>
              </CardItem>
               </Card>
 
-              <Card style={{marginBottom:10}}>
+              <Card style={{marginBottom:5}}>
               <CardItem>
               <Left>
                 <Thumbnail source={require('../images/generalista.jpg')}/>
@@ -79,11 +78,10 @@ export default class Home extends Component{
              <Item style={{width:'90%', marginLeft:15}}></Item>
              <CardItem>
                  <Body>
-                 <Text note>10/04/2019 | 11:11</Text>
-                 <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 100,00</Text></Text>
+                 <Text note style={{fontWeight:'bold', marginTop:5}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 100,00</Text></Text>
                  </Body>
                  <Right>
-                 <Avancar name='arrow-right' size={50} style={{color:'#282c34'}} onPress={this.visita01}></Avancar>
+                 <Avancar name='arrow-right' size={50} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
                  </Right>
              </CardItem>
               </Card>
@@ -101,15 +99,14 @@ export default class Home extends Component{
              <Item style={{width:'90%', marginLeft:15}}></Item>
              <CardItem>
                  <Body>
-                 <Text note>10/04/2019 | 11:11</Text>
-                 <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 150,00</Text></Text>
+                 <Text note style={{fontWeight:'bold', marginTop:5}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 150,00</Text></Text>
                  </Body>
                  <Right>
-                 <Avancar name='arrow-right' size={50} style={{color:'#282c34'}} onPress={this.visita01}></Avancar>
+                 <Avancar name='arrow-right' size={50} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
                  </Right>
              </CardItem>
               </Card>
-            </ScrollView>
+            </View>
           </Drawer>
         )
     }

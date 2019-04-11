@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, ScrollView} from 'react-native';
-import { Header, Left, Body, Text, Card, CardItem, Thumbnail, Title, Drawer, Right, Button, Icon } from 'native-base';
+import { Header, Left, Body, Text, Card, CardItem, Thumbnail, Item, Drawer, Right, Button, Icon } from 'native-base';
 
 
 
@@ -8,7 +8,7 @@ import {Actions} from 'react-native-router-flux';
 import MenuHeader from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
-
+import Avancar from 'react-native-vector-icons/EvilIcons';
 import SideBar from './SideBar';
 
 
@@ -44,62 +44,71 @@ export default class Home extends Component{
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
             
-
-              <Card style={{marginBottom:20}}>
-                  <CardItem cardBody>
-                    <Image source={require('../images/generalista.jpg')} style={{height: 200, width: null, flex: 1}}/>
-                  </CardItem>
-                  <CardItem style={{marginBottom:-10}}>
-                      <Text style={{fontWeight:'bold', color:'#282c34'}} >GENERALISTA</Text>
-                  </CardItem>
-                  <CardItem>
-                      <Text>Orientação rápida de até 15 minutos.</Text>
-                  </CardItem>
-                  <CardItem>
-                      <Text style={{fontWeight:'bold', color:'#b9001f'}}>R$ 50,00</Text>
-                  </CardItem>
-                  <CardItem>
-                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.visita01}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
-                  </CardItem>
+              <Card style={{marginBottom:10}}>
+              <CardItem>
+              <Left>
+                <Thumbnail source={require('../images/generalista.jpg')}/>
+                <Body>
+                  <Text style={{fontWeight:'bold', color:'#282c34'}}>GENERALISTA</Text>
+                  <Text note>Orientação rápida de até 15 minutos.</Text>
+                </Body>
+              </Left>
+             </CardItem>
+             <Item style={{width:'90%', marginLeft:15}}></Item>
+             <CardItem>
+                 <Body>
+                 <Text note>10/04/2019 | 11:11</Text>
+                 <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 50,00</Text></Text>
+                 </Body>
+                 <Right>
+                 <Avancar name='arrow-right' size={50} style={{color:'#282c34'}} onPress={this.visita01}></Avancar>
+                 </Right>
+             </CardItem>
               </Card>
 
-              <Card style={{marginBottom:20}}>
-                  <CardItem cardBody>
-                    <Image source={require('../images/generalista.jpg')} style={{height: 200, width: null, flex: 1}}/>
-                  </CardItem>
-                  <CardItem style={{marginBottom:-10}}>
-                      <Text style={{fontWeight:'bold', color:'#282c34'}} >GENERALISTA</Text>
-                  </CardItem>
-                  <CardItem>
-                      <Text>Orientação com generalista de até 30 minutos.</Text>
-                  </CardItem>
-                  <CardItem>
-                      <Text style={{fontWeight:'bold', color:'#b9001f'}}>R$ 100,00</Text>
-                  </CardItem>
-                  <CardItem>
-                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.visita01}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
-                  </CardItem>
+              <Card style={{marginBottom:10}}>
+              <CardItem>
+              <Left>
+                <Thumbnail source={require('../images/generalista.jpg')}/>
+                <Body>
+                  <Text style={{fontWeight:'bold', color:'#282c34'}}>GENERALISTA</Text>
+                  <Text note>Orientação rápida de até 30 minutos.</Text>
+                </Body>
+              </Left>
+             </CardItem>
+             <Item style={{width:'90%', marginLeft:15}}></Item>
+             <CardItem>
+                 <Body>
+                 <Text note>10/04/2019 | 11:11</Text>
+                 <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 100,00</Text></Text>
+                 </Body>
+                 <Right>
+                 <Avancar name='arrow-right' size={50} style={{color:'#282c34'}} onPress={this.visita01}></Avancar>
+                 </Right>
+             </CardItem>
               </Card>
 
               <Card style={{marginBottom:40}}>
-                  <CardItem cardBody>
-                    <Image source={require('../images/especialista.jpg')} style={{height: 200, width: null, flex: 1}}/>
-                  </CardItem>
-                  <CardItem style={{marginBottom:-10}}>
-                      <Text style={{fontWeight:'bold', color:'#282c34'}} >ESPECIALISTA</Text>
-                  </CardItem>
-                  <CardItem>
-                      <Text>Orientação com especialista de até 30 minutos.</Text>
-                  </CardItem>
-                  <CardItem>
-                      <Text style={{fontWeight:'bold', color:'#b9001f'}}>R$ 150,00</Text>
-                  </CardItem>
-                  <CardItem>
-                  <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this.visita01}><Text style={{color:'white', flex:1, textAlign:'center'}}>ACESSAR</Text></Button>
-                  </CardItem>
+              <CardItem>
+              <Left>
+                <Thumbnail source={require('../images/especialista.jpg')}/>
+                <Body>
+                  <Text style={{fontWeight:'bold', color:'#282c34'}}>ESPECIALISTA</Text>
+                  <Text note>Orientação rápida de até 30 minutos.</Text>
+                </Body>
+              </Left>
+             </CardItem>
+             <Item style={{width:'90%', marginLeft:15}}></Item>
+             <CardItem>
+                 <Body>
+                 <Text note>10/04/2019 | 11:11</Text>
+                 <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 150,00</Text></Text>
+                 </Body>
+                 <Right>
+                 <Avancar name='arrow-right' size={50} style={{color:'#282c34'}} onPress={this.visita01}></Avancar>
+                 </Right>
+             </CardItem>
               </Card>
-
-          
             </ScrollView>
           </Drawer>
         )

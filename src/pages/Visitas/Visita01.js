@@ -29,9 +29,7 @@ export default class Visita01 extends Component{
     render(){
         return(
             <ScrollView style={{backgroundColor:'#eaebed'}}>
-            <Item style={{borderBottomWidth:0, marginLeft:10, marginTop:10}}>
-            <Button transparent onPress={this.home}><Voltar name='arrow-left' size={50} style={{color:'#282c34'}}></Voltar></Button>
-            </Item>
+
 
 
             
@@ -115,13 +113,7 @@ export default class Visita01 extends Component{
           </View>
         </Modal>
             </Content>
-            <Footer style={{backgroundColor:'#eaebed'}}>
-                    <Left></Left>
-                    <Body></Body>
-                    <Right><Button transparent onPress={this.home}><IcoHome name='home-circle' size={50} style={{color:'#17a2b8', marginRight:20}}></IcoHome></Button></Right>
-            </Footer>
-            
-           
+          
             </ScrollView>
         )
     }

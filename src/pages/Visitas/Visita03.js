@@ -16,12 +16,12 @@ export default class Visita03 extends Component{
         Actions.home()
     };
 
-    visita01(){
-        Actions.visita01()
-    };
-
     visita02(){
         Actions.visita02()
+    };
+
+    visita04(){
+        Actions.visita04()
     };
 
     state = {
@@ -31,23 +31,21 @@ export default class Visita03 extends Component{
     render(){
         return(
             <ScrollView style={{backgroundColor:'#eaebed'}}>
-            <Item style={{borderBottomWidth:0, marginLeft:10, marginTop:10}}>
-            <Button transparent onPress={this.visita02}><Voltar name='arrow-left' size={50} style={{color:'#282c34'}}></Voltar></Button>
-            </Item>
+            
 
 
             
             <Content style={{padding:20}}>
                 <Item style={{borderBottomWidth:0}}>
-                    <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:20}}>Há quanto tempo está com o problema?</Text>
+                    <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:30}}>Há quanto tempo está com o problema?</Text>
                 </Item>
                 <Item style={{borderBottomWidth:0}}>
-                  <Left><Text style={{color:"#282c34"}}>0</Text></Left>
+                  <Left><Text style={{color:"#282c34"}}>1</Text></Left>
                   <Body></Body>
                   <Right><Text style={{color:"#282c34"}}>30</Text></Right>
                 </Item>
                 <Slider
-                minimumValue={0}
+                minimumValue={1}
                 maximumValue={30}
                 minimumTrackTintColor='#17a2b8'
                 maximumTrackTintColor='#17a2b8'
@@ -61,7 +59,7 @@ export default class Visita03 extends Component{
           {this.state.value}
         </Text>
         </Item>
-        <Item style={{borderBottomWidth:0, marginTop:20}}>
+        <Item style={{borderBottomWidth:0, marginTop:40}}>
           <Text style={{color:"#282c34", fontSize:18, fontWeight:"bold"}}>Dias, meses, ano?</Text>
         </Item>
         <Item>
@@ -79,66 +77,16 @@ export default class Visita03 extends Component{
 
                 <Form>
                     
-                    <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:20}} onPress={this._toggleModal}>
+                    <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:40}} onPress={this._toggleModal}>
                         <Text style={{color:'white', flex:1, textAlign:'center'}} onPress={this.visita04}>AVANÇAR</Text>
                     </Button>
                 </Form>
 
 
-                <Modal isVisible={this.state.isModalVisible} style={{maxHeight:400}}>
-          <View style={{ flex: 1, backgroundColor:'#fff', padding:20 }} size={100}>
-            <Item style={{borderBottomWidth:0}}>
-                    <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:20}}>Adicione seu filho</Text>
-            </Item>
-            <Item>
-                    <Input placeholder="Digite o nome" style={{color:'#282c34', fontSize:16}} placeholderTextColor="#999"/>
-                </Item>
-                <Item>
-                    <Picker
-                        selectedValue={this.state.language}
-                        style={{height: 50, width: 100}}
-                        onValueChange={(itemValue, itemIndex) =>
-                            this.setState({language: itemValue})
-                        }>
-                        <Picker.Item label="Selecione o sexo" value="Masculino" color="#999"/>
-                        <Picker.Item label="Masculino" value="Masculino" color="#282c34"/>
-                        <Picker.Item label="Feminino" value="Feminino" color="#282c34"/>
-                    </Picker>
-                </Item>
-
-                <Item style={{borderBottomWidth:1}}>
-                  <TextInputMask
-                  type={'custom'}
-                  options={{
-                    mask: '99/99/9999'
-                  }}
-                  value={this.state.nascimento}
-                  onChangeText={text => {
-                    this.setState({
-                      nascimento: text
-                    })
-                  }}
-                  style={styles.inputMask}
-                  placeholder=" 21/11/1983" type="datetime"
-                />
-            </Item>
-            <Item style={{marginTop:20, marginBottom:20, borderBottomWidth:0}}>
-            <Text style={{fontWeight:'bold', color:'#282c34'}}>Nota: <Text note style={{fontWeight:'100'}}>Ao continuar, concordo que estou legalmente autorizado a tomar decisões médicas para esta pessoa. </Text></Text>
-            </Item>
-            <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%'}} onPress={this._toggleModal}><Text style={{color:'white', flex:1, textAlign:'center'}}>SALVAR</Text></Button>
-          </View>
-        </Modal>
-
-        
+                        
             </Content>
 
-            <Footer style={{backgroundColor:'#eaebed'}}>
-                    <Left></Left>
-                    <Body></Body>
-                    <Right><Button transparent onPress={this.home}><IcoHome name='home-circle' size={50} style={{color:'#17a2b8', marginRight:20}}></IcoHome></Button></Right>
-            </Footer>
-            
-           
+          
             </ScrollView>
         )
     }

@@ -17,7 +17,12 @@ import Contatos from './pages/Contatos';
 import Visita01 from './pages/Visitas/Visita01';
 import Visita02 from './pages/Visitas/Visita02';
 import Visita03 from './pages/Visitas/Visita03';
-
+import Visita04 from './pages/Visitas/Visita04';
+import Visita05 from './pages/Visitas/Visita05';
+import Visita06 from './pages/Visitas/Visita06';
+import Visita07 from './pages/Visitas/Visita07';
+import Visita08 from './pages/Visitas/Visita08';
+import Visita09 from './pages/Visitas/Visita09';
 
 export default class Routes extends Component{
     render(){
@@ -38,6 +43,12 @@ export default class Routes extends Component{
               <Scene key="visita01" hideNavBar component={Visita01} title="Visita01"/>
               <Scene key="visita02" hideNavBar component={Visita02} title="Visita02"/>
               <Scene key="visita03" hideNavBar component={Visita03} title="Visita03"/>
+              <Scene key="visita04" hideNavBar component={Visita04} title="Visita04"/>
+              <Scene key="visita05" hideNavBar component={Visita05} title="Visita05"/>
+              <Scene key="visita06" hideNavBar component={Visita06} title="Visita06"/>
+              <Scene key="visita07" hideNavBar component={Visita07} title="Visita07"/>
+              <Scene key="visita08" hideNavBar component={Visita08} title="Visita08"/>
+              <Scene key="visita09" hideNavBar component={Visita09} title="Visita09"/>
             </Scene>
            </Router>
 

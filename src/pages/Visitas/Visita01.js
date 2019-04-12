@@ -103,7 +103,7 @@ export default class Visita01 extends Component{
                     })
                   }}
                   style={styles.inputMask}
-                  placeholder=" 21/11/1983" type="datetime"
+                  placeholder=" Digite a data de nascimento" type="datetime"
                 />
             </Item>
             <Item style={{marginTop:20, marginBottom:20, borderBottomWidth:0}}>

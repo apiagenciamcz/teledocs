@@ -51,7 +51,7 @@ export default class Visita08 extends Component{
             </CardItem>
             <CardItem>
             <Button bordered danger style={{padding:10, width:'100%'}} onPress={this._toggleModal}>
-                        <Text style={{flex:1, textAlign:'center'}} onPress={this.visita08}>CANCELAR</Text>
+                        <Text style={{flex:1, textAlign:'center'}} onPress={this.home}>CANCELAR</Text>
                     </Button>
             </CardItem>
             <CardItem>

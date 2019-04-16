@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet} from 'react-native';
-import { Form, Content, Left, Body, Text, Button, Thumbnail, Item, Footer, Right, View, Input, Picker} from 'native-base';
+import { Form, Content, Header, Body, Text, Button, Thumbnail, Item, Drawer, Right, View, Input, Picker} from 'native-base';
 
 import Voltar from 'react-native-vector-icons/EvilIcons';
 import IcoHome from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -8,6 +8,10 @@ import {Actions} from 'react-native-router-flux';
 import Modal from "react-native-modal";
 import { TextInputMask } from 'react-native-masked-text';
 import Textarea from 'react-native-textarea';
+
+import MenuHeader from 'react-native-vector-icons/AntDesign';
+import MenuModal from 'react-native-vector-icons/EvilIcons';
+import SideBar from '../SideBar';
 
 
 export default class Visita02 extends Component{
@@ -37,6 +41,14 @@ export default class Visita02 extends Component{
     
     render(){
         return(
+          <Drawer ref={(ref) => { this._drawer = ref; }} 
+          content={<SideBar navigator={this._navigator} />} 
+          onClose={() => this.closeDrawer()} >
+          <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
+              <Item style={{borderBottomWidth:0, marginLeft:-290}}>
+                  <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.visita01} />
+              </Item> 
+          </Header>
             <ScrollView style={{backgroundColor:'#eaebed'}}>
 
 
@@ -118,6 +130,7 @@ export default class Visita02 extends Component{
           
            
             </ScrollView>
+        </Drawer>
         )
     }
 }

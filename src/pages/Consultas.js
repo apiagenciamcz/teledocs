@@ -5,7 +5,7 @@ import { Header, Left, Body, Text, Thumbnail, Title, Drawer, Button, Right, Item
 import Voltar from 'react-native-vector-icons/FontAwesome';
 
 import {Actions} from 'react-native-router-flux';
-import MenuHeader from 'react-native-vector-icons/MaterialCommunityIcons';
+import MenuHeader from 'react-native-vector-icons/AntDesign';
 import Modal from "react-native-modal";
 import Carousel from 'react-native-snap-carousel';
 
@@ -25,6 +25,9 @@ export default class Consultas extends Component{
         Actions.pop()
     };
 
+    home(){
+        Actions.home()
+    }
     state = {
         isModalVisible: false,
       };
@@ -39,18 +42,12 @@ export default class Consultas extends Component{
             <Drawer ref={(ref) => { this._drawer = ref; }} 
             content={<SideBar navigator={this._navigator} />} 
             onClose={() => this.closeDrawer()} >
-            <Header style={{backgroundColor:'#eaebed', shadowColor:'blue', shadowOpacity:2, height:80}}>
-                <Left style={{marginLeft:10}}>
-                <Image style={{width: 60, height: 60}} source={require('../images/LogoB.jpg')} />
-                </Left>
-                <Body style={{flex: 1, justifyContent: 'center', marginLeft:20}}>
-                <Text style={{fontWeight:'bold', color:'#282c34'}}>TeleDocs</Text>
-                    <Text note style={{color:'#282c34'}}>Suas Consultas</Text>
-                </Body>
-                <Right>
-                <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} /> 
-                </Right>
-              </Header>
+            <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
+                <Item style={{borderBottomWidth:0, marginLeft:-130}}>
+                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.home} />
+                    <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Suas Consultas</Text>  
+                </Item> 
+            </Header>
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} >
               {/* scrollEnabled={true} horizontal={true} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} */}
               <Card style={{marginBottom:20}}>
@@ -65,15 +62,12 @@ export default class Consultas extends Component{
              </CardItem>
              <Item style={{width:'90%', marginLeft:15}}></Item>
                   <CardItem>
-                      <Text note>10/04/2019 | 11:11</Text>
-                  </CardItem>
-                  <CardItem>
                       <Text style={{fontWeight:'bold', color:'#282c34'}}>ESPECIALIDADE: <Text note>Neurologista</Text></Text>
                   </CardItem>
                   <CardItem style={{marginTop:-15}}>
                       <Text style={{fontWeight:'bold', color:'#282c34'}}>TEMPO: <Text note>30 Minutos</Text></Text>
                   </CardItem>
-                  <CardItem style={{marginTop:-15, marginBottom:15}}>
+                  <CardItem style={{marginTop:-15}}>
                       <Text style={{fontWeight:'bold', color:'#282c34'}}>VALOR: <Text note style={{color:'#b9001f', fontWeight:"100"}}>R$ 150,00</Text></Text>
                   </CardItem>
 
@@ -83,8 +77,13 @@ export default class Consultas extends Component{
                   <CardItem>
                   <Button style={{width:'100%',  marginBottom:-10, backgroundColor:'#ffc107'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#282c34'}}>RECEITA</Text></Button>
                   </CardItem>
-                  <CardItem style={{marginBottom:20}}>
+                  <CardItem>
                       <Button info style={{width:'100%'}}><Text style={{flex:1, color:'#fff', marginLeft:85}}>MENSAGEM</Text><Icon active name="chatbubbles" style={{fontSize:22, color:'#fff'}}><Text style={{color:'#fff'}}>&nbsp;4</Text></Icon></Button>
+                  </CardItem>
+                  <CardItem>
+                      <Right>
+                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:-10}}>10/04/2019 | 11:11</Text>
+                      </Right>
                   </CardItem>
               </Card>
 
@@ -100,23 +99,25 @@ export default class Consultas extends Component{
              </CardItem>
              <Item style={{width:'90%', marginLeft:15}}></Item>
                   <CardItem>
-                      <Text note>10/04/2019 | 11:11</Text>
-                  </CardItem>
-                  <CardItem>
                       <Text style={{fontWeight:'bold', color:'#282c34'}}>ESPECIALIDADE: <Text note>Neurologista</Text></Text>
                   </CardItem>
                   <CardItem style={{marginTop:-15}}>
                       <Text style={{fontWeight:'bold', color:'#282c34'}}>TEMPO: <Text note>30 Minutos</Text></Text>
                   </CardItem>
-                  <CardItem style={{marginTop:-15, marginBottom:15}}>
+                  <CardItem style={{marginTop:-15}}>
                       <Text style={{fontWeight:'bold', color:'#282c34'}}>VALOR: <Text note style={{color:'#b9001f', fontWeight:"100"}}>R$ 150,00</Text></Text>
                   </CardItem>
 
                   <CardItem>  
                   <Button style={{width:'100%', marginBottom:-10, backgroundColor:'#f14336'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#fff'}}>PROBLEMA</Text></Button>
                   </CardItem>
-                  <CardItem style={{marginBottom:20}}>
+                  <CardItem>
                   <Button style={{width:'100%',  marginBottom:-10, backgroundColor:'#ffc107'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#282c34'}}>RECEITA</Text></Button>
+                  </CardItem>
+                  <CardItem>
+                      <Right>
+                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:5}}>10/04/2019 | 11:11</Text>
+                      </Right>
                   </CardItem>
               </Card>
 
@@ -132,15 +133,12 @@ export default class Consultas extends Component{
              </CardItem>
              <Item style={{width:'90%', marginLeft:15}}></Item>
                   <CardItem>
-                      <Text note>10/04/2019 | 11:11</Text>
-                  </CardItem>
-                  <CardItem>
                       <Text style={{fontWeight:'bold', color:'#282c34'}}>ESPECIALIDADE: <Text note>Neurologista</Text></Text>
                   </CardItem>
                   <CardItem style={{marginTop:-15}}>
                       <Text style={{fontWeight:'bold', color:'#282c34'}}>TEMPO: <Text note>30 Minutos</Text></Text>
                   </CardItem>
-                  <CardItem style={{marginTop:-15, marginBottom:15}}>
+                  <CardItem style={{marginTop:-15}}>
                       <Text style={{fontWeight:'bold', color:'#282c34'}}>VALOR: <Text note style={{color:'#b9001f', fontWeight:"100"}}>R$ 150,00</Text></Text>
                   </CardItem>
 
@@ -150,8 +148,13 @@ export default class Consultas extends Component{
                   <CardItem>
                   <Button style={{width:'100%',  marginBottom:-10, backgroundColor:'#ffc107'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#282c34'}}>RECEITA</Text></Button>
                   </CardItem>
-                  <CardItem style={{marginBottom:20}}>
+                  <CardItem>
                       <Button info style={{width:'100%'}}><Text style={{flex:1, color:'#fff', marginLeft:85}}>MENSAGEM</Text><Icon active name="chatbubbles" style={{fontSize:22, color:'#fff'}}><Text style={{color:'#fff'}}>&nbsp;4</Text></Icon></Button>
+                  </CardItem>
+                  <CardItem>
+                      <Right>
+                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:-10}}>10/04/2019 | 11:11</Text>
+                      </Right>
                   </CardItem>
               </Card>
               

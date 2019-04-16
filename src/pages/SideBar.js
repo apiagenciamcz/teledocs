@@ -10,9 +10,6 @@ export default class SideBar extends Component{
     login(){
         Actions.login()
     }
-    home(){
-        Actions.home()
-    }
     consultas(){
         Actions.consultas()
     }
@@ -35,7 +32,7 @@ export default class SideBar extends Component{
 
         return(
             <LinearGradient colors={['#242831', '#424855']} style={styles.linearGradient}>
-                <Item style={{borderBottomWidth:0, padding:20, marginTop:20, marginBottom:40}}>
+                <Item style={{borderBottomWidth:0, padding:20, marginTop:30, marginBottom:40}}>
                     <Left>
                     <Thumbnail style={{width: 60, height: 60}} source={require('../images/perfil_user.jpeg')} />
                     </Left>
@@ -44,10 +41,9 @@ export default class SideBar extends Component{
                         <Text note style={{color:'#fff'}} onPress={this.profile}>Editar Perfil</Text>
                     </Body>
                 </Item>
-                <Content style={{paddingRight:20}}>
+                <Content style={{padding:20, backgroundColor:'#fff'}}>
                     
                     <List>
-                        <ListItem noBorder><Text style={styles.listItem} onPress={this.home}>HOME</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem} onPress={this.consultas}>SUAS CONSULTAS</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem} onPress={this.meiosdepagt}>MEIOS DE PAGAMENTO</Text></ListItem>
                         <ListItem noBorder><Text style={styles.listItem} onPress={this.aplicarcupom}>APLICAR CUPOM</Text></ListItem>
@@ -55,10 +51,11 @@ export default class SideBar extends Component{
                         <ListItem noBorder><Text style={styles.listItem} onPress={this.contatos}>CONTATE-NOS</Text></ListItem>
                     </List>
                     
-                </Content>
-                <Item style={{borderBottomWidth:0, alignSelf:'baseline', padding:30}} onPress={this.login}>
-                    <Icon name="sign-out" size={30} color="#fff" /><Text style={{color:'#fff', fontSize:14, marginLeft:20}}>SAIR</Text>
+                
+                <Item style={{borderBottomWidth:0, alignSelf:'baseline', padding:30, marginLeft:-10, marginTop:100}} onPress={this.login}>
+                    <Icon name="sign-out" size={30} color="#282c34" /><Text style={{color:'#282c34', fontSize:14}}>SAIR</Text>
                 </Item>
+                </Content>
             </LinearGradient>
             
         )
@@ -68,11 +65,9 @@ export default class SideBar extends Component{
 var styles = StyleSheet.create({
     linearGradient: {
       flex: 1,
-      paddingLeft: 15,
-      paddingRight: 15,
     },
     listItem:{
-        color:'#fff',
+        color:'#282c34',
         fontSize:14,
         marginBottom:-10,
         

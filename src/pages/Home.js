@@ -29,20 +29,11 @@ export default class Home extends Component{
             <Drawer ref={(ref) => { this._drawer = ref; }} 
             content={<SideBar navigator={this._navigator} />} 
             onClose={() => this.closeDrawer()} >
-            <Header style={{backgroundColor:'#eaebed', shadowColor:'blue', shadowOpacity:2, height:80}}>
-                <Left style={{marginLeft:10}}>
-                <Image style={{width: 60, height: 60}} source={require('../images/LogoB.jpg')} />
-                </Left>
-                <Body style={{flex: 1, justifyContent: 'center', marginLeft:20}}>
-                <Text style={{fontWeight:'bold', color:'#282c34'}}>Olá, Israel</Text>
-                    <Text note style={{color:'#282c34'}}>Seja Bem-Vindo</Text>
-                </Body>
-                <Right>
-                <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} /> 
-                </Right>
-              </Header>
+            <Header style={{backgroundColor:'#eaebed', shadowColor:'blue', shadowOpacity:2, height:50}}>
+                <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} style={{marginTop:10, marginLeft:-300}} /> 
+            </Header>
             
-              <View style={{backgroundColor:'#eaebed', padding:20}}>
+              <ScrollView style={{backgroundColor:'#eaebed', padding:20}}>
             
               <Card style={{marginBottom:5}}>
               <CardItem>
@@ -60,8 +51,10 @@ export default class Home extends Component{
                  <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 50,00</Text></Text>
                  </Body>
                  <Right>
-                 <Avancar name='arrow-right' size={40} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
                  </Right>
+             </CardItem>
+             <CardItem>
+             <Button block style={{backgroundColor:'#282c34', width:'100%', marginTop:-10}} onPress={this.visita01}><Text> ACESSAR </Text></Button>
              </CardItem>
               </Card>
 
@@ -80,9 +73,9 @@ export default class Home extends Component{
                  <Body>
                  <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 100,00</Text></Text>
                  </Body>
-                 <Right>
-                 <Avancar name='arrow-right' size={40} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
-                 </Right>
+             </CardItem>
+             <CardItem>
+             <Button block style={{backgroundColor:'#282c34', width:'100%', marginTop:-10}} onPress={this.visita01}><Text> ACESSAR </Text></Button>
              </CardItem>
               </Card>
 
@@ -101,12 +94,12 @@ export default class Home extends Component{
                  <Body>
                  <Text note style={{fontWeight:'bold'}}>VALOR R$:<Text style={{color:'#b9001f', fontWeight:"100"}}> 150,00</Text></Text>
                  </Body>
-                 <Right>
-                 <Avancar name='arrow-right' size={40} style={{color:'#282c34', marginTop:-3}} onPress={this.visita01}></Avancar>
-                 </Right>
+             </CardItem>
+             <CardItem>
+             <Button block style={{backgroundColor:'#282c34', width:'100%', marginTop:-10}} onPress={this.visita01}><Text> ACESSAR </Text></Button>
              </CardItem>
               </Card>
-            </View>
+            </ScrollView>
           </Drawer>
         )
     }

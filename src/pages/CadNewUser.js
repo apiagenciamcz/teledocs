@@ -72,7 +72,7 @@ export default class CadNewUser extends Component{
                                                         })
                                                       }}
                                                       style={{marginBottom:-28, marginLeft:-18, fontSize:15}}
-                                                      placeholder="Informe apenas os números."
+                                                      placeholder="99/99/9999"
                                                   />
                             </View>
 
@@ -89,7 +89,7 @@ export default class CadNewUser extends Component{
                                 })
                                 }}
                                 style={{marginBottom:-28, marginLeft:-18, fontSize:15}}
-                                placeholder="Informe apenas os números."
+                                placeholder="(99) 99999-9999"
                             />
                             </View>
                             

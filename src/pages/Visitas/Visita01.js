@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet} from 'react-native';
-import { Card, Content, Left, Body, Text, CardItem, Button, Thumbnail, Item, Footer, Right, View, Input, Picker} from 'native-base';
+import { Header, Card, Content, Left, Body, Text, CardItem, Button, Thumbnail, Item, Drawer, Label, View, Input, Picker} from 'native-base';
 
 import Voltar from 'react-native-vector-icons/EvilIcons';
 import IcoHome from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -8,11 +8,18 @@ import {Actions} from 'react-native-router-flux';
 import Modal from "react-native-modal";
 import { TextInputMask } from 'react-native-masked-text';
 
+import MenuHeader from 'react-native-vector-icons/AntDesign';
+import MenuModal from 'react-native-vector-icons/EvilIcons';
+import SideBar from '../SideBar';
 
 export default class Visita01 extends Component{
 
     home(){
         Actions.home()
+    };
+
+    visita01(){
+        Actions.visita01()
     };
 
     visita02(){
@@ -28,6 +35,14 @@ export default class Visita01 extends Component{
     
     render(){
         return(
+            <Drawer ref={(ref) => { this._drawer = ref; }} 
+            content={<SideBar navigator={this._navigator} />} 
+            onClose={() => this.closeDrawer()} >
+            <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
+                <Item style={{borderBottomWidth:0, marginLeft:-290}}>
+                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.home} />
+                </Item> 
+            </Header>
             <ScrollView style={{backgroundColor:'#eaebed'}}>
 
 
@@ -37,8 +52,8 @@ export default class Visita01 extends Component{
                 <Item style={{borderBottomWidth:0}}>
                     <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:20}}>Para quem você deseja essa consulta?</Text>
                 </Item>
-                <Card style={{flex: 0, marginBottom:10}}>
-                <CardItem >
+                <Card transparent style={{flex: 0, marginBottom:10}}>
+                <CardItem>
                 <Left>
                     <Thumbnail style={{backgroundColor:'#007bff'}} />
                     <Body>
@@ -49,7 +64,7 @@ export default class Visita01 extends Component{
                 </Card>
 
 
-                <Card style={{flex: 0, marginBottom:10}}>
+                <Card transparent style={{flex: 0, marginBottom:10}}>
                 <CardItem >
                 <Left>
                     <Thumbnail style={{backgroundColor:'#e83e8c'}}  />
@@ -61,7 +76,7 @@ export default class Visita01 extends Component{
                 </CardItem>
                 </Card>
 
-                    <Card style={{flex: 0}}>
+                    <Card transparent style={{flex: 0}}>
                     <CardItem >
                         <Body >
                         <Text >Para outra pessoa?</Text>
@@ -69,15 +84,15 @@ export default class Visita01 extends Component{
                         </Body>
                     </CardItem>
                     </Card>
-                <Modal isVisible={this.state.isModalVisible} style={{maxHeight:400}}>
+                <Modal isVisible={this.state.isModalVisible} style={{maxHeight:460}}>
+                
           <View style={{ flex: 1, backgroundColor:'#fff', padding:20 }} size={100}>
-            <Item style={{borderBottomWidth:0}}>
-                    <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:20}}>Adicione seu filho</Text>
+          <MenuModal name="close" size={30} color="#282c34" onPress={this._toggleModal} style={{marginBottom:20}} />
+            <Item stackedLabel>
+                    <Label style={{fontSize:15, color:'#282c34'}}>Nome</Label>
+                    <Input style={styles.inputs} placeholder="Digite aqui o nome do seu filho" placeholderTextColor="#999"/>
             </Item>
-            <Item>
-                    <Input placeholder="Digite o nome" style={{color:'#282c34', fontSize:16}} placeholderTextColor="#999"/>
-                </Item>
-                <Item>
+                <Item style={{marginTop:25}}>
                     <Picker
                         selectedValue={this.state.language}
                         style={{height: 50, width: 100}}
@@ -89,23 +104,25 @@ export default class Visita01 extends Component{
                         <Picker.Item label="Feminino" value="Feminino" color="#282c34"/>
                     </Picker>
                 </Item>
+                <View style={{borderBottomWidth:1, padding:20, borderBottomColor:'#ccc', width:'100%'}}>
+                              <Label style={{fontSize:16, color:'#282c34', marginLeft:-20}}>Digite a data de nascimento</Label>
+                              <TextInputMask
+                                                      type={'datetime'}
+                                                      maxLength={10}
+                                                      options={{
+                                                        mask: '99/99/9999'
+                                                      }}
+                                                      value={this.state.nascimento}
+                                                      onChangeText={text => {
+                                                        this.setState({
+                                                          nascimento: text
+                                                        })
+                                                      }}
+                                                      style={{marginBottom:-28, fontSize:15, marginLeft:-15}}
+                                                      placeholder="99/99/9999"
+                                                  />
+                            </View>
 
-                <Item style={{borderBottomWidth:1}}>
-                  <TextInputMask
-                  type={'custom'}
-                  options={{
-                    mask: '99/99/9999'
-                  }}
-                  value={this.state.nascimento}
-                  onChangeText={text => {
-                    this.setState({
-                      nascimento: text
-                    })
-                  }}
-                  style={styles.inputMask}
-                  placeholder=" Digite a data de nascimento" type="datetime"
-                />
-            </Item>
             <Item style={{marginTop:20, marginBottom:20, borderBottomWidth:0}}>
             <Text style={{fontWeight:'bold', color:'#282c34'}}>Nota: <Text note style={{fontWeight:'100'}}>Ao continuar, concordo que estou legalmente autorizado a tomar decisões médicas para esta pessoa. </Text></Text>
             </Item>
@@ -115,6 +132,7 @@ export default class Visita01 extends Component{
             </Content>
           
             </ScrollView>
+        </Drawer>
         )
     }
 }

@@ -19,8 +19,8 @@ export default class Login extends Component{
     cadnewuser(){
         Actions.cadnewuser()
     }
-    loginuser(){
-      Actions.loginuser()
+    home(){
+      Actions.home()
     }
     state = {
       text:'',
@@ -52,11 +52,11 @@ export default class Login extends Component{
 
         <Form style={{width:'100%', padding:10, marginTop:25}}>
         <Item floatingLabel style={{marginBottom:-10}}>
-            <Label style={{marginTop:-5}}>Digite o seu email</Label>
+            <Label style={{marginTop:-5, fontSize:15, color:'#282c34'}}>Digite o seu email</Label>
             <Input/>
         </Item>
         <Item floatingLabel style={{marginBottom:10}}>
-            <Label style={{marginTop:-5}}>Digite a sua senha</Label>
+            <Label style={{marginTop:-5, fontSize:15, color:'#282c34'}}>Digite a sua senha</Label>
             <Input secureTextEntry={true} maxLength={6}/>
         </Item>
         {/* <View style={{borderBottomWidth:1, borderBottomColor:'#282c34', marginBottom:10}}>

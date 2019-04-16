@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
-import { Container, Picker, Button, Text, Content, Form, Item, Input} from 'native-base';
+import { View, Picker, Button, Text, Content, Form, Item, Input, Label} from 'native-base';
 import Face from 'react-native-vector-icons/FontAwesome';
 import {Actions} from 'react-native-router-flux';
 import { TextInputMask } from 'react-native-masked-text';
@@ -31,50 +31,54 @@ export default class CadNewUser extends Component{
                             </Text>
                         </Face.Button>
                         <Text style={styles.subtitle}>Ou entre com os seus dados.</Text>
-                        <Form>
-                            <Item>
-                            <Input style={styles.inputs} placeholder="Digite o seu nome" placeholderTextColor="#999"/>
+                        <Form style={{marginLeft:-10}}>
+                            <Item stackedLabel>
+                              <Label style={{fontSize:15, color:'#282c34'}}>Nome</Label>
+                            <Input style={styles.inputs} placeholder="Digite seu nome aqui." placeholderTextColor="#999"/>
                             </Item>
 
-                            <Item>
-                            <Input style={styles.inputs} placeholder="Digite o seu email" placeholderTextColor="#999"/>
+                            <Item stackedLabel>
+                            <Label style={{fontSize:15, color:'#282c34'}}>EMail</Label>
+                            <Input style={styles.inputs} placeholder="Digite seu email aqui." placeholderTextColor="#999"/>
                             </Item>
 
 
-                            <Item>
-                            <Picker
-  selectedValue={this.state.language}
-  style={{height: 50, width: 100}}
-  onValueChange={(itemValue, itemIndex) =>
-    this.setState({language: itemValue})
-  }>
-  <Picker.Item label="Selecione o seu sexo" value="" color="#999"/>
-  <Picker.Item label="Masculino" value="Masculino" color="#282c34"/>
-  <Picker.Item label="Feminino" value="Feminino" color="#282c34"/>
-</Picker>
-
+                            <Item style={{marginTop:25}}>
+                                <Picker
+                                  selectedValue={this.state.language}
+                                  style={{height: 50, width: 100}}
+                                
+                                    onValueChange={(itemValue, itemIndex) =>
+                                    this.setState({language: itemValue})
+                                  }>
+                                  <Picker.Item label="Selecione o seu sexo" value="" color="#999"/>
+                                  <Picker.Item label="Masculino" value="Masculino" color="#282c34"/>
+                                  <Picker.Item label="Feminino" value="Feminino" color="#282c34"/>
+                                </Picker>
                             </Item>
                             
-                            <Item style={{borderBottomWidth:1, flex:1}}>
-                  <TextInputMask
-                  type={'custom'}
-                  options={{
-                    mask: '99/99/9999'
-                  }}
-                  value={this.state.nascimento}
-                  onChangeText={text => {
-                    this.setState({
-                      nascimento: text
-                    })
-                  }}
-                  style={{flex:1, flexDirection:'row', fontSize:16, color:'#282c34'}}
-                  placeholder="Digite a data de validade" type="datetime" maxLength={10}
+                            <View style={{borderBottomWidth:1, padding:20, borderBottomColor:'#ccc', width:'100%', marginLeft:18}}>
+                              <Label style={{fontSize:16, color:'#282c34', marginLeft:-20}}>Digite a data de nascimento</Label>
+                              <TextInputMask
+                                                      type={'datetime'}
+                                                      maxLength={10}
+                                                      options={{
+                                                        mask: '99/99/9999'
+                                                      }}
+                                                      value={this.state.nascimento}
+                                                      onChangeText={text => {
+                                                        this.setState({
+                                                          nascimento: text
+                                                        })
+                                                      }}
+                                                      style={{marginBottom:-28, marginLeft:-18, fontSize:15}}
+                                                      placeholder="Informe apenas os números."
+                                                  />
+                            </View>
 
-                />
-            </Item>
-
-                            <Item>
-                            <TextInputMask
+                            <View style={{borderBottomWidth:1, padding:20, borderBottomColor:'#ccc', width:'100%', marginLeft:18}}>
+                              <Label style={{fontSize:16, color:'#282c34', marginLeft:-20}}>Digite o seu telefone</Label>
+                              <TextInputMask
                                 type={'cel-phone'}
                                 value={this.state.phoneBR}
                                 maxLength={15}
@@ -84,18 +88,17 @@ export default class CadNewUser extends Component{
                                     
                                 })
                                 }}
-                                style={{height: 50, width: '100%', marginTop:5, fontSize:16, color:'#282c34'}}
-                                placeholder="Digite o seu telefone"
+                                style={{marginBottom:-28, marginLeft:-18, fontSize:15}}
+                                placeholder="Informe apenas os números."
                             />
-                            </Item>
-
-                            <Item>
+                            </View>
+                            
+                            <Item stackedLabel>
+                            <Label style={{fontSize:15, color:'#282c34'}}>Senha</Label>
                             <Input secureTextEntry={true} maxLength={6} style={styles.inputs} placeholder="Digite sua senha" placeholderTextColor="#999"/>
                             </Item>
 
-
-
-                            <Button block style={{backgroundColor:'#282c34', marginTop:20, marginBottom:20}} onPress={this.home}><Text> Cadastrar </Text></Button>
+                            <Button block style={{backgroundColor:'#282c34', marginTop:20, marginBottom:40}} onPress={this.home}><Text> Cadastrar </Text></Button>
                         </Form>
                     </Content>
                     </ScrollView>
@@ -118,6 +121,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         margin: 10,
     },
+
     label:{
         fontSize: 14,
         color:'#999',
@@ -126,7 +130,7 @@ const styles = StyleSheet.create({
         marginTop:-10,
     },
     inputs:{
-        fontSize:16, 
+        fontSize:15, 
         color:'#282c34',
     },
     

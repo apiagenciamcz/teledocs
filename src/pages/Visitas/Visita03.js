@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet} from 'react-native';
-import { Form, Content, Left, Body, Text, Button, Thumbnail, Item, Footer, Right, View, Input, Picker} from 'native-base';
+import { Form, Content, Left, Body, Text, Button, Thumbnail, Item, Footer, Right, View, Input, Picker, Header, Drawer} from 'native-base';
 
-import Voltar from 'react-native-vector-icons/EvilIcons';
-import IcoHome from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Actions} from 'react-native-router-flux';
-import Modal from "react-native-modal";
-import { TextInputMask } from 'react-native-masked-text';
 import Slider from "react-native-slider";
+
+import MenuHeader from 'react-native-vector-icons/AntDesign';
+import SideBar from '../SideBar';
 
 
 export default class Visita03 extends Component{
@@ -30,21 +29,34 @@ export default class Visita03 extends Component{
 
     render(){
         return(
+          <Drawer ref={(ref) => { this._drawer = ref; }} 
+          content={<SideBar navigator={this._navigator} />} 
+          onClose={() => this.closeDrawer()} >
+          <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
+              <Item style={{borderBottomWidth:0, marginLeft:-290}}>
+                  <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.visita02} />
+              </Item> 
+          </Header>
             <ScrollView style={{backgroundColor:'#eaebed'}}>
             
 
 
             
             <Content style={{padding:20}}>
-                <Item style={{borderBottomWidth:0}}>
+                <Item style={{borderBottomWidth:0, marginBottom:100}}>
                     <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:30}}>Há quanto tempo está com o problema?</Text>
                 </Item>
-                <Item style={{borderBottomWidth:0}}>
+                <Item style={{borderBottomWidth:0, width:'48%'}}>
                   <Left><Text style={{color:"#282c34"}}>1</Text></Left>
                   <Body></Body>
                   <Right><Text style={{color:"#282c34"}}>30</Text></Right>
                 </Item>
                 <Slider
+                style={customStyles8.container}
+                trackStyle={customStyles8.track}
+                thumbStyle={customStyles8.thumb}
+                minimumTrackTintColor='#282c34'
+                thumbTouchSize={{width: 50, height: 40}}
                 minimumValue={1}
                 maximumValue={30}
                 minimumTrackTintColor='#17a2b8'
@@ -53,16 +65,14 @@ export default class Visita03 extends Component{
                 step={1}
           value={this.state.value}
           onValueChange={value => this.setState({ value })}
+              style={{width:'48%'}}
         />
-        <Item style={{borderBottomWidth:0, justifyContent:'center'}}>
+        <Item style={{borderBottomWidth:0, justifyContent:'center', width:'48%'}}>
         <Text style={{color:"#282c34"}}>
           {this.state.value}
         </Text>
         </Item>
-        <Item style={{borderBottomWidth:0, marginTop:40}}>
-          <Text style={{color:"#282c34", fontSize:18, fontWeight:"bold"}}>Dias, meses, ano?</Text>
-        </Item>
-        <Item>
+        <Item style={{width:'40%', marginLeft:'60%', marginTop:-90}}>
                       <Picker
                         selectedValue={this.state.language}
                         style={{height: 50, width: 100}}
@@ -77,7 +87,7 @@ export default class Visita03 extends Component{
 
                 <Form>
                     
-                    <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:40}} onPress={this._toggleModal}>
+                    <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:180}} onPress={this._toggleModal}>
                         <Text style={{color:'white', flex:1, textAlign:'center'}} onPress={this.visita04}>AVANÇAR</Text>
                     </Button>
                 </Form>
@@ -88,6 +98,7 @@ export default class Visita03 extends Component{
 
           
             </ScrollView>
+        </Drawer>
         )
     }
 }
@@ -101,4 +112,26 @@ const styles = StyleSheet.create({
     marginBottom:10,
 },
 
+
+
+  });
+
+  var customStyles8 = StyleSheet.create({
+    container: {
+      height: 30,
+    },
+    track: {
+      height: 3,
+      backgroundColor: '#303030',
+    },
+    thumb: {
+      width: 20,
+      height: 20,
+      backgroundColor: '#282c34',
+      borderRadius: 20 / 2,
+      shadowColor: '#282c34',
+      shadowOffset: {width: 0, height: 0},
+      shadowRadius: 2,
+      shadowOpacity: 1,
+    }
   });

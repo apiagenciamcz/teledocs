@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet} from 'react-native';
-import { Form, Content, Header, Body, Text, Button, Thumbnail, Item, Drawer, Right, View, Input, Picker} from 'native-base';
+import { Form, Content, Header, Drawer, Text, Button, Item, View, Input, Picker} from 'native-base';
 
 import Voltar from 'react-native-vector-icons/EvilIcons';
 import IcoHome from 'react-native-vector-icons/MaterialCommunityIcons';

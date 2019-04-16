@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 import SideBar from './SideBar';
 
-export default class MeiosdePagt extends Component{
+export default class DelMeiosdePagt extends Component{
   constructor(props) {
     super(props)
 
@@ -30,17 +30,10 @@ export default class MeiosdePagt extends Component{
         this._drawer._root.open() 
     };
 
-    home(){
-        Actions.home()
+    meiosdepagt(){
+        Actions.meiosdepagt()
     };
 
-    delmeiosdepagt(){
-      Actions.delmeiosdepagt()
-  };
-
-  addmeiosdepagt(){
-    Actions.addmeiosdepagt()
-};
     state = {
         isModalVisible: false,
       };
@@ -55,34 +48,18 @@ export default class MeiosdePagt extends Component{
             content={<SideBar navigator={this._navigator} />} 
             onClose={() => this.closeDrawer()} >
             <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
-                <Item style={{borderBottomWidth:0, marginLeft:-90}}>
-                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.home} />
-                    <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Meios de Pagamento</Text>  
+                <Item style={{borderBottomWidth:0, marginLeft:-170}}>
+                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.meiosdepagt} />
+                    <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>MasterCard</Text>  
                 </Item> 
             </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
-              <View><Text>Formas de Pagamento</Text></View>
-              <List style={{backgroundColor:'#fff', marginTop:20}}>
-                <ListItem>
-                  <Left>
-                  <Image source={require('../images/mastercard.jpg')} /><Text style={{marginLeft:10}}>**** 4182</Text>
-                  </Left>
-                  <Right>
-                    <Icon name="right" onPress={this.delmeiosdepagt}/>
-                  </Right>
-                </ListItem>
-                <ListItem >
-                <Left>
-                <Image source={require('../images/visa.jpg')} /><Text style={{marginLeft:10}}>**** 0695</Text>
-                  </Left>
-                  <Right>
-                    <Icon name="right"  />
-                  </Right>
-                </ListItem>
-              </List>
-
-                <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:20}} onPress={this.addmeiosdepagt}><Text style={{color:'white', flex:1, textAlign:'center'}}>ADICIONAR NOVO CARTÃO</Text></Button>
+                <Text note>Número do Cartão</Text>
+                <View><Text>**** **** **** 4182</Text></View>
+                <Text note style={{marginTop:30}}>Data de Vencimento</Text>
+                <View><Text>10/2024</Text></View>
+                <Button style={{padding:10, backgroundColor:'#f14336', width:'100%', marginTop:20}} onPress={this.meiosdepagt}><Text style={{color:'white', flex:1, textAlign:'center'}}>EXCLUIR</Text></Button>
 
 
                 <Modal isVisible={this.state.isModalVisible} style={{maxHeight:380}}>

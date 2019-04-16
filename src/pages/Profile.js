@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Image} from 'react-native';
-import { Header, Left, Body, Text, Form, Title, Drawer, Button, Right, Item, Picker, CardItem, View, Label, Input} from 'native-base';
+import Face from 'react-native-vector-icons/FontAwesome';
+import { Header, Left, Body, Text, Form, Title, Drawer, Button, Right, Item, Picker, Content, View, Label, Input} from 'native-base';
 
 import Voltar from 'react-native-vector-icons/FontAwesome';
 
 import {Actions} from 'react-native-router-flux';
-import MenuHeader from 'react-native-vector-icons/MaterialCommunityIcons';
+import MenuHeader from 'react-native-vector-icons/AntDesign';
 import Modal from "react-native-modal";
 import { TextInputMask } from 'react-native-masked-text';
 
@@ -29,8 +30,8 @@ export default class MeiosdePagt extends Component{
         this._drawer._root.open() 
     };
 
-    back(){
-        Actions.pop()
+    home(){
+        Actions.home()
     };
 
     state = {
@@ -46,77 +47,87 @@ export default class MeiosdePagt extends Component{
             <Drawer ref={(ref) => { this._drawer = ref; }} 
             content={<SideBar navigator={this._navigator} />} 
             onClose={() => this.closeDrawer()} >
-            <Header style={{backgroundColor:'#eaebed', shadowColor:'blue', shadowOpacity:2, height:80}}>
-                <Left style={{marginLeft:10}}>
-                <Image style={{width: 60, height: 60}} source={require('../images/LogoB.jpg')} />
-                </Left>
-                <Body style={{flex: 1, justifyContent: 'center', marginLeft:20}}>
-                <Text style={{fontWeight:'bold', color:'#282c34'}}>TeleDocs</Text>
-                    <Text note style={{color:'#282c34'}}>Editar Perfil</Text>
-                </Body>
-                <Right>
-                <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} /> 
-                </Right>
-              </Header>
+            <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
+                <Item style={{borderBottomWidth:0, marginLeft:-165}}>
+                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.home} />
+                    <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Editar Perfil</Text>  
+                </Item> 
+            </Header>
             
-              <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
-                <Item>
-                    <Input placeholder="Israel Moreira dos Santos" style={{color:'#282c34', fontSize:16}} placeholderTextColor="#999"/>
-                </Item>
-                <Item>
-                    <Input placeholder="api.agenciadigital@gmail.com" style={{color:'#282c34', fontSize:16}} placeholderTextColor="#999"/>
-                </Item>
-                <Item>
-                    <Picker
-                        selectedValue={this.state.language}
-                        style={{height: 50, width: 100}}
-                        onValueChange={(itemValue, itemIndex) =>
-                            this.setState({language: itemValue})
-                        }>
-                        <Picker.Item label="Masculino" value="Masculino" color="#999"/>
-                        <Picker.Item label="Feminino" value="Feminino" color="#282c34"/>
-                    </Picker>
-                </Item>
+              <ScrollView style={{backgroundColor:'#fff', padding:20}} scrollEnabled={true}>
+                
 
-                <Item style={{borderBottomWidth:1}}>
-                  <TextInputMask
-                  type={'custom'}
-                  options={{
-                    mask: '99/99/9999'
-                  }}
-                  value={this.state.nascimento}
-                  onChangeText={text => {
-                    this.setState({
-                      nascimento: text
-                    })
-                  }}
-                  style={styles.inputMask}
-                  placeholder=" 21/11/1983" type="datetime"
-                />
-            </Item>
+              <Content>
+                    <Form style={{marginLeft:-10}}>
+                        <Item stackedLabel>
+                          <Label style={{fontSize:15, color:'#282c34'}}>Nome</Label>
+                        <Input style={styles.inputs} placeholder="Israel Moreira dos Santos" placeholderTextColor="#999"/>
+                        </Item>
 
-            <Item style={{borderBottomWidth:1}}>
-                  <TextInputMask
-                  type={'custom'}
-                  options={{
-                    mask: '(99) 9999-9999'
-                  }}
-                  value={this.state.telefone}
-                  onChangeText={text => {
-                    this.setState({
-                      telefone: text
-                    })
-                  }}
-                  style={styles.inputMask}
-                  placeholder=" 82 99955-0695" type="cel-phone"
-                />
-            </Item>
+                        <Item stackedLabel>
+                        <Label style={{fontSize:15, color:'#282c34'}}>EMail</Label>
+                        <Input style={styles.inputs} placeholder="israel.amoreira@gmail.com" placeholderTextColor="#999"/>
+                        </Item>
 
-                <Item>
-                    <Input placeholder="Confirme/Altere sua senha" style={{color:'#282c34', fontSize:16}} placeholderTextColor="#999" secureTextEntry={true} maxLength={6}/>
-                </Item>
 
-                <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:40}} onPress={this._toggleModal}><Text style={{color:'white', flex:1, textAlign:'center'}}>ALTERAR</Text></Button>
+                        <Item style={{marginTop:25}}>
+                            <Picker
+                              selectedValue={this.state.language}
+                              style={{height: 50, width: 100}}
+                            
+                                onValueChange={(itemValue, itemIndex) =>
+                                this.setState({language: itemValue})
+                              }>
+                              <Picker.Item label="Selecione o seu sexo" value="" color="#999"/>
+                              <Picker.Item label="Masculino" value="Masculino" color="#282c34"/>
+                              <Picker.Item label="Feminino" value="Feminino" color="#282c34"/>
+                            </Picker>
+                        </Item>
+                        
+                        <View style={{borderBottomWidth:1, padding:20, borderBottomColor:'#ccc', width:'100%', marginLeft:18}}>
+                          <Label style={{fontSize:16, color:'#282c34', marginLeft:-20}}>Data de Nascimento</Label>
+                          <TextInputMask
+                                                  type={'datetime'}
+                                                  maxLength={10}
+                                                  options={{
+                                                    mask: '99/99/9999'
+                                                  }}
+                                                  value={this.state.nascimento}
+                                                  onChangeText={text => {
+                                                    this.setState({
+                                                      nascimento: text
+                                                    })
+                                                  }}
+                                                  style={{marginBottom:-28, marginLeft:-18, fontSize:15}}
+                                                  placeholder="99/99/9999"
+                                              />
+                        </View>
+
+                        <View style={{borderBottomWidth:1, padding:20, borderBottomColor:'#ccc', width:'100%', marginLeft:18}}>
+                          <Label style={{fontSize:16, color:'#282c34', marginLeft:-20}}>Telefone</Label>
+                          <TextInputMask
+                            type={'cel-phone'}
+                            value={this.state.phoneBR}
+                            maxLength={15}
+                            onChangeText={text => {
+                            this.setState({
+                                phoneBR: text
+                                
+                            })
+                            }}
+                            style={{marginBottom:-28, marginLeft:-18, fontSize:15}}
+                            placeholder="(99) 99999-9999"
+                        />
+                        </View>
+                        
+                        <Item stackedLabel>
+                        <Label style={{fontSize:15, color:'#282c34'}}>Senha</Label>
+                        <Input secureTextEntry={true} maxLength={6} style={styles.inputs} placeholder="Digite sua senha" placeholderTextColor="#999"/>
+                        </Item>
+
+                        <Button block style={{backgroundColor:'#282c34', marginTop:20, marginBottom:40}} onPress={this._toggleModal}><Text> ALTERAR </Text></Button>
+                    </Form>
+                </Content>
 
 
                 <Modal isVisible={this.state.isModalVisible} style={{maxHeight:250}}>

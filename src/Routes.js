@@ -8,10 +8,13 @@ import Consultas from './pages/Consultas';
 import CadNewUser from './pages/CadNewUser';
 import LoginUser from './pages/LoginUser';
 import MeiosdePagt from './pages/MeiosdePagt';
+import DelMeiosdePagt from './pages/DelMeiosdePagt';
+import AddMeiosdePagt from './pages/AddMeiosdePagt';
 import AplicarCupom from './pages/AplicarCupom';
 import Profile from './pages/Profile';
 import Faq from './pages/Faq';
 import Contatos from './pages/Contatos';
+
 
 
 import Visita01 from './pages/Visitas/Visita01';
@@ -35,6 +38,8 @@ export default class Routes extends Component{
               <Scene key="home" hideNavBar component={Home} title="Home"/>
               <Scene key="consultas" hideNavBar component={Consultas} title="Consultas"/>
               <Scene key="meiosdepagt" hideNavBar component={MeiosdePagt} title="MeiosdePagt"/>
+              <Scene key="delmeiosdepagt" hideNavBar component={DelMeiosdePagt} title="DelMeiosdePagt"/>
+              <Scene key="addmeiosdepagt" hideNavBar component={AddMeiosdePagt} title="AddMeiosdePagt"/>
               <Scene key="profile" hideNavBar component={Profile} title="profile"/>
               <Scene key="aplicarcupom" hideNavBar component={AplicarCupom} title="AplicarCupom"/>
               <Scene key="faq" hideNavBar component={Faq} title="Faq"/>

@@ -5,7 +5,7 @@ import { Header, Left, Body, Text, Form, Title, Drawer, Textarea, Button, Right,
 import Voltar from 'react-native-vector-icons/FontAwesome';
 
 import {Actions} from 'react-native-router-flux';
-import MenuHeader from 'react-native-vector-icons/MaterialCommunityIcons';
+import MenuHeader from 'react-native-vector-icons/AntDesign';
 import Modal from "react-native-modal";
 
 
@@ -21,8 +21,8 @@ export default class Contatos extends Component{
         this._drawer._root.open() 
     };
 
-    back(){
-        Actions.pop()
+    home(){
+        Actions.home()
     };
 
     state = {
@@ -38,18 +38,12 @@ export default class Contatos extends Component{
             <Drawer ref={(ref) => { this._drawer = ref; }} 
             content={<SideBar navigator={this._navigator} />} 
             onClose={() => this.closeDrawer()} >
-            <Header style={{backgroundColor:'#eaebed', shadowColor:'blue', shadowOpacity:2, height:80}}>
-                <Left style={{marginLeft:10}}>
-                <Image style={{width: 60, height: 60}} source={require('../images/LogoB.jpg')} />
-                </Left>
-                <Body style={{flex: 1, justifyContent: 'center', marginLeft:20}}>
-                <Text style={{fontWeight:'bold', color:'#282c34'}}>TeleDocs</Text>
-                    <Text note style={{color:'#282c34'}}>Contate-nos</Text>
-                </Body>
-                <Right>
-                <MenuHeader name="menu" size={30} color="#282c34" onPress={() => this.openDrawer()} /> 
-                </Right>
-              </Header>
+            <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
+                <Item style={{borderBottomWidth:0, marginLeft:-165}}>
+                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.home} />
+                    <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Contate-nos</Text>  
+                </Item> 
+            </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
                 <Form>

@@ -116,7 +116,7 @@ export default class Consultas extends Component{
                   </CardItem>
                   <CardItem>
                       <Right>
-                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:5}}>10/04/2019 | 11:11</Text>
+                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:5}}>08/04/2019 | 09:05</Text>
                       </Right>
                   </CardItem>
               </Card>
@@ -153,7 +153,7 @@ export default class Consultas extends Component{
                   </CardItem>
                   <CardItem>
                       <Right>
-                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:-10}}>10/04/2019 | 11:11</Text>
+                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:-10}}>05/04/2019 | 15:10</Text>
                       </Right>
                   </CardItem>
               </Card>

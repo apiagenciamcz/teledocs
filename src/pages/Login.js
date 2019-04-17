@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, Image} from 'react-native';
-import {View, Text, Form, Button, Item, Label, Input, Content} from 'native-base';
+import {View, Text, Form, Button, Item, Label, Input, Content, Left, Right, Body} from 'native-base';
 import ImageSlider from 'react-native-image-slider';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Actions} from 'react-native-router-flux';
@@ -48,8 +48,12 @@ export default class Login extends Component{
         </Text>
         </Icon.Button>
         </Item>
-        
-        <Text style={styles.subtitle}>Ou use seu email.</Text>
+        <Content style={{marginTop:50, width:'100%', borderBottomWidth:0, marginBottom:-220}}>
+            <Left style={{width:'80%', marginTop:16}}><Item style={{width:'40%'}}></Item></Left>
+            <Body style={{marginTop:-15}}><Text>OU</Text></Body>
+            <Right style={{width:'80%', marginTop:-5}}><Item style={{width:'40%'}}></Item></Right>
+        </Content>
+        <Text style={styles.subtitle}>use seu email:</Text>
         <Form style={{width:'100%', padding:10, marginTop:25}}>
         <Item floatingLabel style={{marginBottom:-10}}>
             <Label style={{marginTop:-5, fontSize:15, color:'#282c34'}}>Digite o seu email</Label>
@@ -92,7 +96,7 @@ export default class Login extends Component{
       marginBottom:10,
   },
   subtitle:{
-    fontSize: 14,
+    fontSize: 16,
     textAlign: 'center',
     marginTop:50,
     marginBottom:-40

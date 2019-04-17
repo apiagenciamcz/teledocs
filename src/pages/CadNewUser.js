@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
-import { View, Picker, Button, Text, Content, Form, Item, Input, Label} from 'native-base';
+import { View, Picker, Button, Text, Content, Form, Item, Input, Label, Left, Right, Body} from 'native-base';
 import Face from 'react-native-vector-icons/FontAwesome';
 import {Actions} from 'react-native-router-flux';
 import { TextInputMask } from 'react-native-masked-text';
@@ -35,7 +35,12 @@ export default class CadNewUser extends Component{
                             Cadastre-se com o Facebook
                             </Text>
                         </Face.Button>
-                        <Text style={styles.subtitle}>Ou entre com os seus dados.</Text>
+                        <Content style={{width:'100%', borderBottomWidth:0, marginTop:10}}>
+                        <Left style={{width:'80%', marginTop:16}}><Item style={{width:'40%'}}></Item></Left>
+                        <Body style={{marginTop:-15}}><Text>OU</Text></Body>
+                        <Right style={{width:'80%', marginTop:-5}}><Item style={{width:'40%'}}></Item></Right>
+                    </Content>
+                        <Text style={styles.subtitle}>entre com os seus dados:</Text>
                         <Form style={{marginLeft:-10}}>
                             <Item stackedLabel>
                               <Label style={{fontSize:15, color:'#282c34'}}>Nome</Label>
@@ -122,7 +127,7 @@ const styles = StyleSheet.create({
         marginBottom:10,
     },
     subtitle:{
-        fontSize: 14,
+        fontSize: 16,
         textAlign: 'center',
         margin: 10,
     },

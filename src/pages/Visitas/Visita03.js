@@ -47,6 +47,11 @@ export default class Visita03 extends Component{
                 <Item style={{borderBottomWidth:0, marginBottom:40}}>
                     <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:30}}>Há quanto tempo está com o problema?</Text>
                 </Item>
+                <Item style={{borderBottomWidth:0, justifyContent:'center', width:'60%', marginTop:-10}}>
+        <Text style={{color:"#282c34", fontSize:24, fontWeight:'bold'}}>
+          {this.state.value}
+        </Text>
+        </Item>
                 <Slider
                 style={customStyles8.container}
                 trackStyle={customStyles8.track}
@@ -63,12 +68,8 @@ export default class Visita03 extends Component{
           onValueChange={value => this.setState({ value })}
               style={{width:'60%'}}
         />
-        <Item style={{borderBottomWidth:0, justifyContent:'center', width:'60%'}}>
-        <Text style={{color:"#282c34"}}>
-          {this.state.value}
-        </Text>
-        </Item>
-        <Item style={{width:'30%', marginLeft:'70%', marginTop:-90}}>
+        
+        <Item style={{width:'30%', marginLeft:'70%', marginTop:-70}}>
                       <Picker
                         selectedValue={this.state.language}
                         style={{height: 50, width: 100}}

@@ -49,7 +49,7 @@ export default class Login extends Component{
         </Icon.Button>
         </Item>
         
-
+        <Text style={styles.subtitle}>Ou use seu email.</Text>
         <Form style={{width:'100%', padding:10, marginTop:25}}>
         <Item floatingLabel style={{marginBottom:-10}}>
             <Label style={{marginTop:-5, fontSize:15, color:'#282c34'}}>Digite o seu email</Label>
@@ -60,7 +60,7 @@ export default class Login extends Component{
             <Input secureTextEntry={true} maxLength={6}/>
         </Item>
                     <Button block style={{backgroundColor:'#282c34', marginTop:10, marginBottom:10}} onPress={this.home}><Text> ENTRAR </Text></Button>
-                    <Text style={{fontSize:14, textAlign:'center'}}>Ainda não tem conta?<Text style={{fontWeight:'500', fontSize:14}} onPress={this.cadnewuser}> Cadastre-se</Text> </Text>
+                    <Text style={{fontSize:14, textAlign:'center'}}>Ainda não tem conta?<Text style={{fontWeight:'500', fontSize:18}} onPress={this.cadnewuser}> Cadastre-se</Text> </Text>
              </Form>
       </View>
       );
@@ -91,4 +91,10 @@ export default class Login extends Component{
       color:'#282c34',
       marginBottom:10,
   },
+  subtitle:{
+    fontSize: 14,
+    textAlign: 'center',
+    marginTop:50,
+    marginBottom:-40
+ },
   });

@@ -5,6 +5,7 @@ import Face from 'react-native-vector-icons/FontAwesome';
 import {Actions} from 'react-native-router-flux';
 import { TextInputMask } from 'react-native-masked-text';
 
+import MenuHeader from 'react-native-vector-icons/AntDesign';
 
 export default class CadNewUser extends Component{
     constructor(props) {
@@ -18,10 +19,14 @@ export default class CadNewUser extends Component{
     home(){
         Actions.home()
     }
+    login(){
+      Actions.login()
+  }
     render(){
         return(
-
+                    
                     <ScrollView style={{backgroundColor:"#fff", padding:20}}>
+                    <MenuHeader name="arrowleft" size={30} color="#282c34" onPress={this.login} />
                     <Content>
                     
                         <Text style={styles.title}>Criar Nova Conta</Text>
@@ -38,7 +43,7 @@ export default class CadNewUser extends Component{
                             </Item>
 
                             <Item stackedLabel>
-                            <Label style={{fontSize:15, color:'#282c34'}}>EMail</Label>
+                            <Label style={{fontSize:15, color:'#282c34'}}>Email</Label>
                             <Input style={styles.inputs} placeholder="Digite seu email aqui." placeholderTextColor="#999"/>
                             </Item>
 

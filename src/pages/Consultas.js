@@ -5,7 +5,7 @@ import { Header, Left, Body, Text, Thumbnail, Title, Drawer, Button, Right, Item
 import Voltar from 'react-native-vector-icons/FontAwesome';
 
 import {Actions} from 'react-native-router-flux';
-import MenuHeader from 'react-native-vector-icons/AntDesign';
+import MenuHeader from 'react-native-vector-icons/MaterialCommunityIcons';
 import Modal from "react-native-modal";
 import Carousel from 'react-native-snap-carousel';
 
@@ -44,13 +44,18 @@ export default class Consultas extends Component{
             onClose={() => this.closeDrawer()} >
             <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
                 <Item style={{borderBottomWidth:0, marginLeft:-130}}>
-                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.home} />
+                    <MenuHeader name="close" size={30} color="#fff" onPress={this.home} />
                     <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Suas Consultas</Text>  
                 </Item> 
             </Header>
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} >
-              {/* scrollEnabled={true} horizontal={true} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} */}
+             
               <Card style={{marginBottom:20}}>
+              <Item style={{padding:10, backgroundColor:'#282c34', borderBottomWidth:0, marginTop:20, marginLeft:-1}}>
+                      <Left>
+                      <Text style={{fontWeight:'bold', marginBottom:5, color:'#fff'}}> 10/04/2019 | 11:11</Text>
+                      </Left>
+                </Item>
               <CardItem>
               <Left>
                 <Thumbnail source={require('../images/doctor.jpg')} />
@@ -72,22 +77,23 @@ export default class Consultas extends Component{
                   </CardItem>
 
                   <CardItem>  
-                  <Button style={{width:'100%', marginBottom:-10, backgroundColor:'#f14336'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#fff'}}>PROBLEMA</Text></Button>
+                  <Button bordered style={{width:'100%', marginBottom:-10, borderColor:'#f14336'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#f14336'}}>PROBLEMA</Text></Button>
                   </CardItem>
                   <CardItem>
-                  <Button style={{width:'100%',  marginBottom:-10, backgroundColor:'#ffc107'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#282c34'}}>RECEITA</Text></Button>
+                  <Button bordered style={{width:'100%',  marginBottom:-10, borderColor:'#ffc107'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#ffc107'}}>RECEITA</Text></Button>
                   </CardItem>
                   <CardItem>
-                      <Button info style={{width:'100%'}}><Text style={{flex:1, color:'#fff', marginLeft:85}}>MENSAGEM</Text><Icon active name="chatbubbles" style={{fontSize:22, color:'#fff'}}><Text style={{color:'#fff'}}>&nbsp;4</Text></Icon></Button>
+                      <Button bordered style={{width:'100%', marginBottom:10, borderColor:'#282c34'}}><Text style={{flex:1, color:'#282c34', marginLeft:85}}>MENSAGEM</Text><Icon active name="chatbubbles" style={{fontSize:22, color:'#282c34'}}><Text style={{color:'#282c34'}}>&nbsp;4</Text></Icon></Button>
                   </CardItem>
-                  <CardItem>
-                      <Right>
-                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:-10}}>10/04/2019 | 11:11</Text>
-                      </Right>
-                  </CardItem>
+                  
               </Card>
 
               <Card style={{marginBottom:20}}>
+              <Item style={{padding:10, backgroundColor:'#282c34', borderBottomWidth:0, marginTop:20, marginLeft:-1}}>
+                      <Left>
+                      <Text style={{fontWeight:'bold', marginBottom:5, color:'#fff'}}> 08/04/2019 | 08:11</Text>
+                      </Left>
+                      </Item>
               <CardItem>
               <Left>
                 <Thumbnail source={require('../images/doctor.jpg')} />
@@ -109,19 +115,20 @@ export default class Consultas extends Component{
                   </CardItem>
 
                   <CardItem>  
-                  <Button style={{width:'100%', marginBottom:-10, backgroundColor:'#f14336'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#fff'}}>PROBLEMA</Text></Button>
+                  <Button bordered style={{width:'100%', marginBottom:-10, borderColor:'#f14336'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#f14336'}}>PROBLEMA</Text></Button>
                   </CardItem>
                   <CardItem>
-                  <Button style={{width:'100%',  marginBottom:-10, backgroundColor:'#ffc107'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#282c34'}}>RECEITA</Text></Button>
+                  <Button bordered style={{width:'100%',  marginBottom:10, borderColor:'#ffc107'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#ffc107'}}>RECEITA</Text></Button>
                   </CardItem>
-                  <CardItem>
-                      <Right>
-                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:5}}>08/04/2019 | 09:05</Text>
-                      </Right>
-                  </CardItem>
+                 
               </Card>
 
               <Card style={{marginBottom:40}}>
+              <Item style={{padding:10, backgroundColor:'#282c34', borderBottomWidth:0, marginTop:20, marginLeft:-1}}>
+                      <Left>
+                      <Text style={{fontWeight:'bold', marginBottom:5, color:'#fff'}}> 05/04/2019 | 15:30</Text>
+                      </Left>
+                      </Item>
               <CardItem>
               <Left>
                 <Thumbnail source={require('../images/doctor.jpg')} />
@@ -143,19 +150,15 @@ export default class Consultas extends Component{
                   </CardItem>
 
                   <CardItem>  
-                  <Button style={{width:'100%', marginBottom:-10, backgroundColor:'#f14336'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#fff'}}>PROBLEMA</Text></Button>
+                  <Button bordered style={{width:'100%', marginBottom:-10, borderColor:'#f14336'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#f14336'}}>PROBLEMA</Text></Button>
                   </CardItem>
                   <CardItem>
-                  <Button style={{width:'100%',  marginBottom:-10, backgroundColor:'#ffc107'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#282c34'}}>RECEITA</Text></Button>
+                  <Button bordered style={{width:'100%',  marginBottom:-10, borderColor:'#ffc107'}} onPress={this.loginuser} onPress={this._toggleModal}><Text style={{flex:1, textAlign:'center', color:'#ffc107'}}>RECEITA</Text></Button>
                   </CardItem>
                   <CardItem>
-                      <Button info style={{width:'100%'}}><Text style={{flex:1, color:'#fff', marginLeft:85}}>MENSAGEM</Text><Icon active name="chatbubbles" style={{fontSize:22, color:'#fff'}}><Text style={{color:'#fff'}}>&nbsp;4</Text></Icon></Button>
+                      <Button bordered style={{width:'100%', marginBottom:10, borderColor:'#282c34'}}><Text style={{flex:1, color:'#282c34', marginLeft:85}}>MENSAGEM</Text><Icon active name="chatbubbles" style={{fontSize:22, color:'#282c34'}}><Text style={{color:'#282c34'}}>&nbsp;4</Text></Icon></Button>
                   </CardItem>
-                  <CardItem>
-                      <Right>
-                      <Text style={{fontWeight:'bold', marginRight:-55, marginTop:-10}}>05/04/2019 | 15:10</Text>
-                      </Right>
-                  </CardItem>
+                  
               </Card>
               
                   <Modal isVisible={this.state.isModalVisible} style={{maxHeight:220}}>

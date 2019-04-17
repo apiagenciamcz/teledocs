@@ -5,15 +5,20 @@ import { Header, Left, Body, Text, Form, Title, Drawer, Button, Right, Item, Car
 import Voltar from 'react-native-vector-icons/FontAwesome';
 
 import {Actions} from 'react-native-router-flux';
-import MenuHeader from 'react-native-vector-icons/AntDesign';
+import MenuHeader from 'react-native-vector-icons/MaterialCommunityIcons';
 import Modal from "react-native-modal";
 import { TextInputMask } from 'react-native-masked-text';
 
 import Icon from 'react-native-vector-icons/AntDesign';
+import { RadioButton, Rad } from 'react-native-paper';
 
 import SideBar from './SideBar';
 
 export default class MeiosdePagt extends Component{
+  state = {
+    checked: 'master',
+  };
+
   constructor(props) {
     super(props)
 
@@ -56,17 +61,21 @@ export default class MeiosdePagt extends Component{
             onClose={() => this.closeDrawer()} >
             <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
                 <Item style={{borderBottomWidth:0, marginLeft:-90}}>
-                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.home} />
+                    <MenuHeader name="close" size={30} color="#fff" onPress={this.home} />
                     <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Meios de Pagamento</Text>  
                 </Item> 
             </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
-              <View><Text>Formas de Pagamento</Text></View>
+              <View><Text>Selecione a forma de pagamento padrão.</Text></View>
+              <RadioButton.Group
+        onValueChange={value => this.setState({ value })}
+        value={this.state.value}
+      >
               <List style={{backgroundColor:'#fff', marginTop:20}}>
                 <ListItem>
                   <Left>
-                  <Image source={require('../images/mastercard.jpg')} /><Text style={{marginLeft:10}}>**** 4182</Text>
+                  <RadioButton value="master" color="#282c34"/><Image source={require('../images/mastercard.jpg')} style={{marginLeft:10}} /><Text style={{marginLeft:10}}>**** 4182</Text>
                   </Left>
                   <Right>
                     <Icon name="right" onPress={this.delmeiosdepagt}/>
@@ -74,14 +83,14 @@ export default class MeiosdePagt extends Component{
                 </ListItem>
                 <ListItem >
                 <Left>
-                <Image source={require('../images/visa.jpg')} /><Text style={{marginLeft:10}}>**** 0695</Text>
+                <RadioButton value="visa" color="#282c34"/><Image source={require('../images/visa.jpg')} style={{marginLeft:10}}/><Text style={{marginLeft:10}}>**** 0695</Text>
                   </Left>
                   <Right>
                     <Icon name="right"  />
                   </Right>
                 </ListItem>
               </List>
-
+              </RadioButton.Group>
                 <Button style={{padding:10, backgroundColor:'#17a2b8', width:'100%', marginTop:20}} onPress={this.addmeiosdepagt}><Text style={{color:'white', flex:1, textAlign:'center'}}>ADICIONAR NOVO CARTÃO</Text></Button>
 
 

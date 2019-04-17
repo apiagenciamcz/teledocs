@@ -53,7 +53,7 @@ export default class SideBar extends Component{
                     
                 
                 <Item style={{borderBottomWidth:0, alignSelf:'baseline', padding:30, marginLeft:-10, marginTop:100}} onPress={this.login}>
-                    <Icon name="sign-out" size={30} color="#282c34" /><Text style={{color:'#282c34', fontSize:14}}>SAIR</Text>
+                    <Icon name="sign-out" size={30} color="#282c34" /><Text style={{color:'#282c34', fontSize:14, marginLeft:10}}>SAIR</Text>
                 </Item>
                 </Content>
             </LinearGradient>

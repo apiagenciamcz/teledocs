@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Image} from 'react-native';
-import { Form, Content, Left, Body, Text, Button, Item, Footer, Right, Card, CardItem, Thumbnail, View} from 'native-base';
+import { Content, Left, Body, Text, Button, Item, Drawer, Header, Card, CardItem} from 'native-base';
 import { ProgressBar, Colors } from 'react-native-paper';
-import Voltar from 'react-native-vector-icons/EvilIcons';
-import IcoHome from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Actions} from 'react-native-router-flux';
-
+import MenuHeader from 'react-native-vector-icons/AntDesign';
+import SideBar from '../SideBar';
 
 export default class Visita08 extends Component{
 
     home(){
         Actions.home()
     };
+
+    visita07(){
+      Actions.visita07()
+  };
 
     visita09(){
         Actions.visita09()
@@ -21,7 +24,15 @@ export default class Visita08 extends Component{
 
     render(){
         return(
-
+          <Drawer ref={(ref) => { this._drawer = ref; }} 
+          content={<SideBar navigator={this._navigator} />} 
+          onClose={() => this.closeDrawer()} >
+          <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
+          <Item style={{borderBottomWidth:0, marginLeft:-210}}>
+                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.visita07} />
+                    <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Médico</Text>  
+                </Item> 
+          </Header>
             <ScrollView style={{backgroundColor:'#eaebed'}}>
            
             <Content style={{padding:20}}>
@@ -64,6 +75,7 @@ export default class Visita08 extends Component{
          
            
             </ScrollView>
+          </Drawer>
         )
     }
 }

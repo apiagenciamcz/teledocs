@@ -5,7 +5,7 @@ import { Header, Left, Body, Text, Form, Title, Drawer, Button, Right, Item, Lab
 import Voltar from 'react-native-vector-icons/FontAwesome';
 
 import {Actions} from 'react-native-router-flux';
-import MenuHeader from 'react-native-vector-icons/AntDesign';
+import MenuHeader from 'react-native-vector-icons/MaterialCommunityIcons';
 import Modal from "react-native-modal";
 
 
@@ -40,7 +40,7 @@ export default class AplicarCupom extends Component{
             onClose={() => this.closeDrawer()} >
             <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
                 <Item style={{borderBottomWidth:0, marginLeft:-130}}>
-                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.home} />
+                    <MenuHeader name="close" size={30} color="#fff" onPress={this.home} />
                     <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Aplicar Cupom</Text>  
                 </Item> 
             </Header>

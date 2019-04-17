@@ -49,8 +49,12 @@ export default class AddMeiosdePagt extends Component{
             </Header>
             
               <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
+              <Item stackedLabel>
+                              <Label style={{fontSize:15, color:'#282c34'}}>Nome do titular</Label>
+                            <Input style={styles.inputs} placeholder="Digite o nome aqui." placeholderTextColor="#999"/>
+                            </Item>
               <View style={{borderBottomWidth:1, borderBottomColor:'#ccc', width:'100%'}}>
-                    <Label style={{fontSize:16, color:'#282c34'}}>Número do Cartão</Label>
+                    <Label style={{fontSize:16, color:'#282c34', marginTop:5}}>Número do Cartão</Label>
                     <TextInputMask
                         type={'custom'}
                         options={{

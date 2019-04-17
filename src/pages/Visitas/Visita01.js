@@ -39,8 +39,9 @@ export default class Visita01 extends Component{
             content={<SideBar navigator={this._navigator} />} 
             onClose={() => this.closeDrawer()} >
             <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
-                <Item style={{borderBottomWidth:0, marginLeft:-290}}>
+            <Item style={{borderBottomWidth:0, marginLeft:-190}}>
                     <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.home} />
+                    <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Paciente</Text>  
                 </Item> 
             </Header>
             <ScrollView style={{backgroundColor:'#eaebed'}}>
@@ -53,13 +54,16 @@ export default class Visita01 extends Component{
                     <Text style={{color:"#282c34", fontSize:22, fontWeight:"bold", marginBottom:20}}>Para quem você deseja essa consulta?</Text>
                 </Item>
                 <Card transparent style={{flex: 0, marginBottom:10}}>
-                <CardItem>
-                <Left>
+                <CardItem >
+                    <Item onPress={this.visita02} style={{borderBottomWidth:0}}>
+                    <Left >
                     <Thumbnail style={{backgroundColor:'#007bff'}} />
                     <Body>
-                    <Text onPress={this.visita02}>Israel Moreira</Text>
+                    <Text style={{marginTop:-40, marginLeft:-45}}>Israel Moreira</Text>
                     </Body>
                 </Left>
+                    </Item>
+                
                 </CardItem>
                 </Card>
 

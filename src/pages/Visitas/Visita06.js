@@ -61,9 +61,10 @@ export default class Visita06 extends Component{
           content={<SideBar navigator={this._navigator} />} 
           onClose={() => this.closeDrawer()} >
           <Header style={{backgroundColor:'#282c34', shadowColor:'blue', shadowOpacity:2, height:60}}>
-              <Item style={{borderBottomWidth:0, marginLeft:-290}}>
-                  <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.visita04} />
-              </Item> 
+          <Item style={{borderBottomWidth:0, marginLeft:-170}}>
+                    <MenuHeader name="arrowleft" size={30} color="#fff" onPress={this.visita05} />
+                    <Text style={{color:"#fff", marginLeft:-30, fontSize:20, marginLeft:20}}>Pagamento</Text>  
+                </Item>
           </Header>
 
             <ScrollView style={{backgroundColor:'#eaebed', padding:20}} scrollEnabled={true}>
